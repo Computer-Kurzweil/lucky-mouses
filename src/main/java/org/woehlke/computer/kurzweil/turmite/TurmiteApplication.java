@@ -19,7 +19,7 @@ public class TurmiteApplication {
 
     private TurmiteApplication() {
         String conf = "application.yml";
-        String jarPath = "target/turmite.jar";
+        String jarPath = "target/lucky-mouses.jar";
         ComputerKurzweilProperties config = ComputerKurzweilProperties.propertiesFactory(conf,jarPath);
         ApplicationFrame frame = new ApplicationFrame(config);
         frame.start();
