@@ -68,7 +68,7 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>org.woehlke.computer.kurzweil.lucky.mouses.TurmiteApplication</mainClass>
+                    <mainClass>org.woehlke.computer.kurzweil.lucky.mouses.LuckyMousesApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

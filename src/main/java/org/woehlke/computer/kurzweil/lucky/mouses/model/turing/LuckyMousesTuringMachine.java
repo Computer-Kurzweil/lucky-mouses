@@ -1,6 +1,6 @@
 package org.woehlke.computer.kurzweil.lucky.mouses.model.turing;
 
-import org.woehlke.computer.kurzweil.lucky.mouses.model.ApplicationModel;
+import org.woehlke.computer.kurzweil.lucky.mouses.model.LuckyMousesModel;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.fractal.GaussianNumberPlane;
 
 /**
@@ -19,13 +19,13 @@ import org.woehlke.computer.kurzweil.lucky.mouses.model.fractal.GaussianNumberPl
  * Date: 28.08.13
  * Time: 12:39
  */
-public class TurmiteTuringMachine {
+public class LuckyMousesTuringMachine {
 
     private volatile GaussianNumberPlane gaussianNumberPlane;
     private volatile TuringPositions turingPositions;
     private volatile TuringPhaseState turingPhaseState;
 
-    public TurmiteTuringMachine(ApplicationModel model) {
+    public LuckyMousesTuringMachine(LuckyMousesModel model) {
         this.gaussianNumberPlane = model.getGaussianNumberPlane();
         this.turingPhaseState = new TuringPhaseState();
         this.turingPositions = new TuringPositions(model.getWorldDimensions());

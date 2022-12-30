@@ -1,6 +1,6 @@
 package org.woehlke.computer.kurzweil.lucky.mouses.model.fractal;
 
-import org.woehlke.computer.kurzweil.lucky.mouses.model.ApplicationModel;
+import org.woehlke.computer.kurzweil.lucky.mouses.model.LuckyMousesModel;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.common.Point;
 
 
@@ -37,7 +37,7 @@ public class GaussianNumberPlane {
     private volatile ComplexNumber complexCenterForMandelbrot;
     private volatile ComplexNumber complexCenterForJulia;
 
-    public GaussianNumberPlane(ApplicationModel model) {
+    public GaussianNumberPlane(LuckyMousesModel model) {
         this.worldDimensions = model.getWorldDimensions();
         this.lattice = new int[worldDimensions.getWidth()][worldDimensions.getHeight()];
         this.complexWorldDimensions = new ComplexNumber(

@@ -5,8 +5,8 @@ import org.woehlke.computer.kurzweil.lucky.mouses.config.ComputerKurzweilPropert
 import org.woehlke.computer.kurzweil.lucky.mouses.model.fractal.GaussianNumberPlane;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.common.Point;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.state.ApplicationStateMachine;
-import org.woehlke.computer.kurzweil.lucky.mouses.model.turing.TurmiteTuringMachine;
-import org.woehlke.computer.kurzweil.lucky.mouses.view.ApplicationFrame;
+import org.woehlke.computer.kurzweil.lucky.mouses.model.turing.LuckyMousesTuringMachine;
+import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;
 
 /**
  * Mandelbrot Set drawn by a Turing Machine.
@@ -18,29 +18,29 @@ import org.woehlke.computer.kurzweil.lucky.mouses.view.ApplicationFrame;
  * @see <a href="https://java.woehlke.org/mandelbrot-julia/">Maven Project Repository</a>
  *
  * @see GaussianNumberPlane
- * @see TurmiteTuringMachine
+ * @see LuckyMousesTuringMachine
  * @see ApplicationStateMachine
  *
  * @see ComputerKurzweilProperties
- * @see ApplicationFrame
+ * @see LuckyMousesFrame
  *
  * Created by tw on 16.12.2019.
  */
 @Slf4j
-public class ApplicationModel {
+public class LuckyMousesModel {
 
     private volatile GaussianNumberPlane gaussianNumberPlane;
-    private volatile TurmiteTuringMachine turmiteTuringMachine;
+    private volatile LuckyMousesTuringMachine luckyMousesTuringMachine;
     private volatile ApplicationStateMachine applicationStateMachine;
 
     private volatile ComputerKurzweilProperties config;
-    private volatile ApplicationFrame frame;
+    private volatile LuckyMousesFrame frame;
 
-    public ApplicationModel(ComputerKurzweilProperties config, ApplicationFrame frame) {
+    public LuckyMousesModel(ComputerKurzweilProperties config, LuckyMousesFrame frame) {
         this.config = config;
         this.frame = frame;
         this.gaussianNumberPlane = new GaussianNumberPlane(this);
-        this.turmiteTuringMachine = new TurmiteTuringMachine(this);
+        this.luckyMousesTuringMachine = new LuckyMousesTuringMachine(this);
         this.applicationStateMachine = new ApplicationStateMachine();
     }
 
@@ -49,7 +49,7 @@ public class ApplicationModel {
         boolean repaint = true;
         switch (applicationStateMachine.getApplicationState()) {
             case MANDELBROT:
-                turmiteTuringMachine.start();
+                luckyMousesTuringMachine.start();
                 repaint = false;
                 break;
             case JULIA_SET:
@@ -63,7 +63,7 @@ public class ApplicationModel {
         boolean repaint = false;
         switch (applicationStateMachine.getApplicationState()) {
             case MANDELBROT:
-                repaint = turmiteTuringMachine.step();
+                repaint = luckyMousesTuringMachine.step();
                 break;
             case JULIA_SET:
                 break;

@@ -1,7 +1,7 @@
 package org.woehlke.computer.kurzweil.lucky.mouses.view.canvas;
 
 
-import org.woehlke.computer.kurzweil.lucky.mouses.model.ApplicationModel;
+import org.woehlke.computer.kurzweil.lucky.mouses.model.LuckyMousesModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +17,7 @@ import java.io.Serial;
  * @see <a href="https://github.com/Computer-Kurzweil/mandelbrot-julia">Github Repository</a>
  * @see <a href="https://java.woehlke.org/mandelbrot-julia/">Maven Project Repository</a>
  *
- * @see ApplicationModel
+ * @see LuckyMousesModel
  * @see Dimension
  *
  * @see JComponent
@@ -26,15 +26,15 @@ import java.io.Serial;
  * Date: 05.02.2006
  * Time: 00:51:51
  */
-public class ApplicationCanvas extends JComponent {
+public class LuckyMousesCanvas extends JComponent {
 
     @Serial
     private final static long serialVersionUID = 242L;
 
-    private volatile ApplicationModel app;
+    private volatile LuckyMousesModel app;
     private volatile Dimension preferredSize;
 
-    public ApplicationCanvas(ApplicationModel app) {
+    public LuckyMousesCanvas(LuckyMousesModel app) {
         this.app = app;
         int width = this.app.getWorldDimensions().getWidth();
         int height = this.app.getWorldDimensions().getHeight();

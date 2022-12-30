@@ -3,9 +3,9 @@ package org.woehlke.computer.kurzweil.lucky.mouses.view;
 import lombok.extern.slf4j.Slf4j;
 import org.woehlke.computer.kurzweil.lucky.mouses.config.ComputerKurzweilProperties;
 import org.woehlke.computer.kurzweil.lucky.mouses.control.ControllerThread;
-import org.woehlke.computer.kurzweil.lucky.mouses.model.ApplicationModel;
+import org.woehlke.computer.kurzweil.lucky.mouses.model.LuckyMousesModel;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.common.Point;
-import org.woehlke.computer.kurzweil.lucky.mouses.view.canvas.ApplicationCanvas;
+import org.woehlke.computer.kurzweil.lucky.mouses.view.canvas.LuckyMousesCanvas;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.labels.PanelButtons;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.labels.PanelCopyright;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.labels.PanelSubtitle;
@@ -23,8 +23,8 @@ import java.io.Serializable;
  * @author Thomas Woehlke
  *
  * @see ControllerThread
- * @see ApplicationCanvas
- * @see ApplicationModel
+ * @see LuckyMousesCanvas
+ * @see LuckyMousesModel
  * @see PanelSubtitle
  * @see PanelCopyright
  *
@@ -41,7 +41,7 @@ import java.io.Serializable;
  * Time: 18:47:46
  */
 @Slf4j
-public class ApplicationFrame extends JFrame implements ImageObserver,
+public class LuckyMousesFrame extends JFrame implements ImageObserver,
         MenuContainer,
         Serializable,
         Accessible,
@@ -54,15 +54,15 @@ public class ApplicationFrame extends JFrame implements ImageObserver,
     private final PanelButtons panelButtons;
 
     private volatile ControllerThread controller;
-    private volatile ApplicationCanvas canvas;
-    private volatile ApplicationModel model;
+    private volatile LuckyMousesCanvas canvas;
+    private volatile LuckyMousesModel model;
     private volatile Rectangle rectangleBounds;
     private volatile Dimension dimensionSize;
 
-    public ApplicationFrame(ComputerKurzweilProperties config) {
+    public LuckyMousesFrame(ComputerKurzweilProperties config) {
         super(config.getLuckyMouses().getView().getTitle());
-        this.model = new ApplicationModel(config,this);
-        this.canvas = new ApplicationCanvas(model);
+        this.model = new LuckyMousesModel(config,this);
+        this.canvas = new LuckyMousesCanvas(model);
         this.controller = new ControllerThread(model, this);
         this.panelSubtitle = new PanelSubtitle(config.getLuckyMouses().getView().getSubtitle());
         this.panelButtons = new PanelButtons(this.model, this, config);
@@ -162,7 +162,7 @@ public class ApplicationFrame extends JFrame implements ImageObserver,
         canvas.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
     }
 
-    public ApplicationCanvas getCanvas() {
+    public LuckyMousesCanvas getCanvas() {
         return canvas;
     }
 
