@@ -1,6 +1,6 @@
 # Lucky Mouses
 
-[![Java CI with Maven](https://github.com/Computer-Kurzweil/turmite/actions/workflows/maven.yml/badge.svg)](https://github.com/Computer-Kurzweil/turmite/actions/workflows/maven.yml)
+[![Java CI with Maven](https://github.com/Computer-Kurzweil/lucky-mouses/actions/workflows/maven.yml/badge.svg)](https://github.com/Computer-Kurzweil/lucky-mouses/actions/workflows/maven.yml)
 
 **A Group of Mouses following each other.**
 
