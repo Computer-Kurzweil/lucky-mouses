@@ -8,31 +8,31 @@
         <version>1.0.1</version>
     </parent>
 
-    <artifactId>turmite</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <artifactId>lucky-mouses</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Turmite</name>
-    <description>Artificial Life Simulation of Bacteria Motion depending on DNA</description>
-    <url>https://java.woehlke.org/turmite/</url>
-    <inceptionYear>2013</inceptionYear>
+    <name>Lucky Mouses</name>
+    <description>A Group of Mouses following each other.</description>
+    <url>https://java.woehlke.org/lucky-mouses/</url>
+    <inceptionYear>2023</inceptionYear>
 
     <scm>
-        <connection>scm:git:git@github.com:Computer-Kurzweil/turmite.git</connection>
-        <developerConnection>scm:git:git@github.com:Computer-Kurzweil/turmite.git</developerConnection>
-        <url>https://github.com/Computer-Kurzweil/turmite/tree/${project.scm.tag}</url>
+        <connection>scm:git:git@github.com:Computer-Kurzweil/lucky-mouses.git</connection>
+        <developerConnection>scm:git:git@github.com:Computer-Kurzweil/lucky-mouses.git</developerConnection>
+        <url>https://github.com/Computer-Kurzweil/lucky-mouses/tree/${project.scm.tag}</url>
         <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
-        <url>https://github.com/Computer-Kurzweil/turmite/issues/</url>
+        <url>https://github.com/Computer-Kurzweil/lucky-mouses/issues/</url>
         <system>GitHub</system>
     </issueManagement>
 
     <distributionManagement>
         <site>
             <id>turmite.local</id>
-            <url>file://${user.home}/public_html/java/turmite/</url>
+            <url>file://${user.home}/public_html/java/lucky-mouses/</url>
         </site>
         <snapshotRepository>
             <id>snapshots</id>
