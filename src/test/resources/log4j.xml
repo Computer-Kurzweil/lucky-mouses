@@ -11,16 +11,16 @@
         </RollingFileAppender>
     </Appenders>
     <Loggers>
-        <Logger name="org.woehlke.computer.kurzweil.turmite.config" level="info" includeLocation="true">
+        <Logger name="org.woehlke.computer.kurzweil.lucky.mouses.config" level="info" includeLocation="true">
             <AppenderRef ref="Console"/>
         </Logger>
-        <Logger name="org.woehlke.computer.kurzweil.turmite.control" level="info" includeLocation="true">
+        <Logger name="org.woehlke.computer.kurzweil.lucky.mouses.control" level="info" includeLocation="true">
             <AppenderRef ref="Console"/>
         </Logger>
-        <Logger name="org.woehlke.computer.kurzweil.turmite.model" level="info" includeLocation="true">
+        <Logger name="org.woehlke.computer.kurzweil.lucky.mouses.model" level="info" includeLocation="true">
             <AppenderRef ref="Console"/>
         </Logger>
-        <Logger name="org.woehlke.computer.kurzweil.turmite.view" level="info" includeLocation="true">
+        <Logger name="org.woehlke.computer.kurzweil.lucky.mouses.view" level="info" includeLocation="true">
             <AppenderRef ref="Console"/>
         </Logger>
         <Root level="info">
