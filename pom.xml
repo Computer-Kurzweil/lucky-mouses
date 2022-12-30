@@ -14,7 +14,7 @@
 
     <name>Lucky Mouses</name>
     <description>A Group of Mouses following each other.</description>
-    <url>https://java.woehlke.org/lucky-mouses/</url>
+    <url>https://java.woehlke.org/kurzweil/lucky-mouses/</url>
     <inceptionYear>2023</inceptionYear>
 
     <scm>
@@ -32,7 +32,7 @@
     <distributionManagement>
         <site>
             <id>turmite.local</id>
-            <url>file://${user.home}/public_html/java/lucky-mouses/</url>
+            <url>file://${user.home}/public_html/java/kurzweil/lucky-mouses/</url>
         </site>
         <snapshotRepository>
             <id>snapshots</id>
