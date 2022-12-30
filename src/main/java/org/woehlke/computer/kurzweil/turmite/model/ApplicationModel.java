@@ -87,14 +87,24 @@ public class ApplicationModel {
     }
 
     public void runA() {
-        System.out.println("runA");
+        System.out.println("run A");
     }
 
     public void runB() {
-        System.out.println("runB");
+        System.out.println("run B");
     }
 
     public void runC() {
-        System.out.println("runC");
+        System.out.println("run C");
+    }
+
+    public void runD() { System.out.println("run D"); }
+
+    public void runE() {
+        System.out.println("run E");
+    }
+
+    public void runF() {
+        System.out.println("run F");
     }
 }

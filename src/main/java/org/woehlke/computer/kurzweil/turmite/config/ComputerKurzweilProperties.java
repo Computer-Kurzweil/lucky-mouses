@@ -70,6 +70,9 @@ public class ComputerKurzweilProperties implements Serializable {
     public Turmite turmite = new Turmite();
 
     @Valid
+    public LuckyMouses luckyMouses = new LuckyMouses();
+
+    @Valid
     public Wator wator = new Wator();
 
     @Valid
@@ -798,6 +801,69 @@ public class ComputerKurzweilProperties implements Serializable {
 
             @NotBlank
             private String buttonsRunC;
+        }
+
+        @ToString
+        @Getter
+        @Setter
+        public static class Control {
+
+            @NotNull
+            private Integer threadSleepTime;
+        }
+    }
+
+    @Getter
+    @Setter
+    @ToString
+    public static class LuckyMouses {
+
+        @Valid
+        public View view = new View();
+
+        @Valid
+        public Control control = new Control();
+
+        @ToString
+        @Getter
+        @Setter
+        public static class View {
+
+            @NotBlank
+            private String title;
+
+            @NotBlank
+            private String subtitle;
+
+            @NotBlank
+            private String copyright;
+
+            @NotBlank
+            private Integer width;
+
+            @NotBlank
+            private Integer height;
+
+            @NotBlank
+            private Integer scale;
+
+            @NotBlank
+            private String buttonsRunA;
+
+            @NotBlank
+            private String buttonsRunB;
+
+            @NotBlank
+            private String buttonsRunC;
+
+            @NotBlank
+            private String buttonsRunD;
+
+            @NotBlank
+            private String buttonsRunE;
+
+            @NotBlank
+            private String buttonsRunF;
         }
 
         @ToString
