@@ -60,11 +60,11 @@ public class ApplicationFrame extends JFrame implements ImageObserver,
     private volatile Dimension dimensionSize;
 
     public ApplicationFrame(ComputerKurzweilProperties config) {
-        super(config.getTurmite().getView().getTitle());
+        super(config.getLuckyMouses().getView().getTitle());
         this.model = new ApplicationModel(config,this);
         this.canvas = new ApplicationCanvas(model);
         this.controller = new ControllerThread(model, this);
-        this.panelSubtitle = new PanelSubtitle(config.getTurmite().getView().getSubtitle());
+        this.panelSubtitle = new PanelSubtitle(config.getLuckyMouses().getView().getSubtitle());
         this.panelButtons = new PanelButtons(this.model, this, config);
         BoxLayout layout = new BoxLayout(rootPane, BoxLayout.PAGE_AXIS);
         rootPane.setLayout(layout);
