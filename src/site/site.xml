@@ -9,8 +9,8 @@
         <version>1.3</version>
     </skin>
     <bannerLeft>
-        <name>Turmite</name>
-        <src>/img/phasenraum_logo.gif</src>
+        <name>Lucky Mouses</name>
+        <src>/img/thomas_woehlke__geburt_einer_vision__logo.png</src>
         <href>https://java.woehlke.org/</href>
     </bannerLeft>
     <publishDate position="navigation-bottom"/>
@@ -20,21 +20,21 @@
     </poweredBy>
     <body>
         <links>
-            <item name="GitHub project" href="https://github.com/Computer-Kurzweil/turmite/" />
+            <item name="GitHub project" href="https://github.com/Computer-Kurzweil/lucky-mouses/" />
         </links>
         <breadcrumbs>
-            <item name="Turmite" href="index.html" />
+            <item name="Lucky Mouses" href="index.html" />
         </breadcrumbs>
         <menu name="Main" inherit="top">
             <item name="Home" href="index.html" />
             <item name="Copyright" href="LICENSE.code.html" />
             <item name="License" href="LICENSE.html" />
-            <item name="GitHub project" href="https://github.com/Computer-Kurzweil/turmite/" />
-            <item name="Maven Project Reports" href="https://java.woehlke.org/turmite/" />
+            <item name="GitHub project" href="https://github.com/Computer-Kurzweil/lucky-mouses/" />
+            <item name="Maven Project Reports" href="https://java.woehlke.org/lucky-mouses/" />
         </menu>
         <menu name="Contribute" inherit="bottom">
-            <item name="Issues" href="https://github.com/Computer-Kurzweil/turmite/issues/" />
-            <item name="Fork on GitHub" href="https://github.com/Computer-Kurzweil/turmite/" />
+            <item name="Issues" href="https://github.com/Computer-Kurzweil/lucky-mouses/issues/" />
+            <item name="Fork on GitHub" href="https://github.com/Computer-Kurzweil/lucky-mouses/" />
             <item name="Donate" href="https://www.paypal.me/ThomasWoehlke" />
         </menu>
         <menu name="Maven Reports" ref="reports" inherit="bottom"/>
