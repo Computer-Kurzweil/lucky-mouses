@@ -79,7 +79,6 @@ public class LuckyMousesFrame extends JFrame implements ImageObserver,
         this.canvas.addMouseListener(   this);
         this.showMeInit();
         this.setModeSwitch();
-        this.controller.start();
     }
 
     public void windowOpened(WindowEvent e) {
@@ -168,5 +167,8 @@ public class LuckyMousesFrame extends JFrame implements ImageObserver,
     }
 
     public void start() {
+        this.model.start();
+        this.controller.start();
+        showMe();
     }
 }
