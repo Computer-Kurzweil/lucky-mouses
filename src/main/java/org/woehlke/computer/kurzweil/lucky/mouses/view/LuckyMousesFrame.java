@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.woehlke.computer.kurzweil.lucky.mouses.config.ComputerKurzweilProperties;
 import org.woehlke.computer.kurzweil.lucky.mouses.control.ControllerThread;
-import org.woehlke.computer.kurzweil.lucky.mouses.model.KochSnowflakeModel;
+import org.woehlke.computer.kurzweil.lucky.mouses.model.LuckyMousesModel;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.canvas.LuckyMousesCanvas;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.labels.PanelButtons;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.labels.PanelCopyright;
@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see ControllerThread
  * @see LuckyMousesCanvas
- * @see KochSnowflakeModel
+ * @see LuckyMousesModel
  * @see PanelSubtitle
  * @see PanelCopyright
  *
@@ -58,14 +58,14 @@ public class LuckyMousesFrame extends JFrame implements ImageObserver,
 
     private volatile ControllerThread controller;
     private volatile LuckyMousesCanvas canvas;
-    private volatile KochSnowflakeModel model;
+    private volatile LuckyMousesModel model;
     private volatile Rectangle rectangleBounds;
     private volatile Dimension dimensionSize;
 
     public LuckyMousesFrame(ComputerKurzweilProperties config) {
         super(config.getLuckyMouses().getView().getTitle());
         this.config = config;
-        this.model = new KochSnowflakeModel(this);
+        this.model = new LuckyMousesModel(this);
         this.canvas = new LuckyMousesCanvas( this.model);
         this.controller = new ControllerThread(model, this);
         this.panelSubtitle = new PanelSubtitle(config.getLuckyMouses().getView().getSubtitle());

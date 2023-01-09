@@ -1,7 +1,7 @@
 package org.woehlke.computer.kurzweil.lucky.mouses.control;
 
 import lombok.extern.slf4j.Slf4j;
-import org.woehlke.computer.kurzweil.lucky.mouses.model.KochSnowflakeModel;
+import org.woehlke.computer.kurzweil.lucky.mouses.model.LuckyMousesModel;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;
 
 /**
@@ -13,7 +13,7 @@ import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;
  * @see <a href="https://github.com/Computer-Kurzweil/mandelbrot-julia">Github Repository</a>
  * @see <a href="https://java.woehlke.org/mandelbrot-julia/">Maven Project Repository</a>
  *
- * @see KochSnowflakeModel
+ * @see LuckyMousesModel
  * @see LuckyMousesFrame
  *
  * @see Thread
@@ -25,14 +25,14 @@ import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;
 @Slf4j
 public class ControllerThread extends Thread implements Runnable {
 
-    private volatile KochSnowflakeModel model;
+    private volatile LuckyMousesModel model;
     private volatile LuckyMousesFrame view;
 
     private volatile Boolean goOn;
     private final int threadSleepTime;
     private final int maxIterations;
 
-    public ControllerThread(KochSnowflakeModel model, LuckyMousesFrame frame) {
+    public ControllerThread(LuckyMousesModel model, LuckyMousesFrame frame) {
         this.view = frame;
         this.model = model;
         this.goOn = Boolean.TRUE;

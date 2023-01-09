@@ -1,7 +1,7 @@
 package org.woehlke.computer.kurzweil.lucky.mouses.view.canvas;
 
 import lombok.Getter;
-import org.woehlke.computer.kurzweil.lucky.mouses.model.KochSnowflakeModel;
+import org.woehlke.computer.kurzweil.lucky.mouses.model.LuckyMousesModel;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.koch.LinkedListNode;
 
 import javax.swing.*;
@@ -15,7 +15,7 @@ import java.util.List;
  * (C) 2006 - 2022 Thomas Woehlke
  * @author Thomas Woehlke
  *
- * @see KochSnowflakeModel
+ * @see LuckyMousesModel
  * @see Dimension
  *
  * @see JComponent
@@ -33,10 +33,10 @@ public class LuckyMousesCanvas extends JComponent  {
     @Serial
     private final static long serialVersionUID = 242L;
 
-    private volatile KochSnowflakeModel model;
+    private volatile LuckyMousesModel model;
     private volatile Dimension preferredSize;
 
-    public LuckyMousesCanvas(KochSnowflakeModel model) {
+    public LuckyMousesCanvas(LuckyMousesModel model) {
         this.model = model;
         int width = this.model.getWorldDimensions().getWidth();
         int height = this.model.getWorldDimensions().getHeight();

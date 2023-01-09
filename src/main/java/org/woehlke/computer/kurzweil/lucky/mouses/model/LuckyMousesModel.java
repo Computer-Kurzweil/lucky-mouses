@@ -24,7 +24,7 @@ import java.io.Serializable;
  * Created by tw on 16.12.2019.
  */
 @Getter
-public class KochSnowflakeModel implements Serializable {
+public class LuckyMousesModel implements Serializable {
 
     @Serial
     static final long serialVersionUID = 242L;
@@ -34,7 +34,7 @@ public class KochSnowflakeModel implements Serializable {
 
     private final LatticeDimension worldDimensions;
 
-    public KochSnowflakeModel(LuckyMousesFrame tab) {
+    public LuckyMousesModel(LuckyMousesFrame tab) {
         this.tab = tab;
         int scale = tab.getConfig().getLuckyMouses().getView().getScale();
         int width = scale * tab.getConfig().getLuckyMouses().getView().getWidth();

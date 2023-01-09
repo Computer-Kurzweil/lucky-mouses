@@ -1,7 +1,7 @@
 package org.woehlke.computer.kurzweil.lucky.mouses.view.labels;
 
 import org.woehlke.computer.kurzweil.lucky.mouses.config.ComputerKurzweilProperties;
-import org.woehlke.computer.kurzweil.lucky.mouses.model.KochSnowflakeModel;
+import org.woehlke.computer.kurzweil.lucky.mouses.model.LuckyMousesModel;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;
 
 import javax.swing.*;
@@ -21,9 +21,9 @@ public class PanelButtons extends JPanel implements ActionListener {
     private volatile JButton buttonsRunE;
     private volatile JButton buttonsRunF;
     private final LuckyMousesFrame tab;
-    private final KochSnowflakeModel model;
+    private final LuckyMousesModel model;
 
-    public PanelButtons(KochSnowflakeModel model, LuckyMousesFrame tab, ComputerKurzweilProperties config ) {
+    public PanelButtons(LuckyMousesModel model, LuckyMousesFrame tab, ComputerKurzweilProperties config ) {
         this.tab = tab;
         this.model = model;
         this.copyright = new JLabel(config.getLuckyMouses().getView().getCopyright());
