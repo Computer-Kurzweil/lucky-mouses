@@ -54,13 +54,4 @@ public class ControllerThread extends Thread implements Runnable {
             }
         }
     }
-
-    private synchronized boolean isRunning(){
-        return goOn;
-    }
-
-    public synchronized void exit() {
-        goOn = Boolean.FALSE;
-    }
-
 }

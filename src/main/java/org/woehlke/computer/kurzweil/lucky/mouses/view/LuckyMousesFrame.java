@@ -86,12 +86,10 @@ public class LuckyMousesFrame extends JFrame implements ImageObserver,
     }
 
     public void windowClosing(WindowEvent e) {
-        this.controller.exit();
+        System.exit(0);
     }
 
-    public void windowClosed(WindowEvent e) {
-        this.controller.exit();
-    }
+    public void windowClosed(WindowEvent e) { System.exit(0); }
 
     public void windowIconified(WindowEvent e) {}
 
