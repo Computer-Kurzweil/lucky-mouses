@@ -5,9 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.woehlke.computer.kurzweil.lucky.mouses.config.ComputerKurzweilProperties;
 import org.woehlke.computer.kurzweil.lucky.mouses.control.ControllerThread;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.KochSnowflakeModel;
-import org.woehlke.computer.kurzweil.lucky.mouses.model.LuckyMousesModel;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.canvas.KochSnowflakeCanvas;
-import org.woehlke.computer.kurzweil.lucky.mouses.view.canvas.LuckyMousesCanvas;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.labels.PanelButtons;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.labels.PanelCopyright;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.labels.PanelSubtitle;
@@ -25,8 +23,8 @@ import java.io.Serializable;
  * @author Thomas Woehlke
  *
  * @see ControllerThread
- * @see LuckyMousesCanvas
- * @see LuckyMousesModel
+ * @see KochSnowflakeCanvas
+ * @see KochSnowflakeModel
  * @see PanelSubtitle
  * @see PanelCopyright
  *

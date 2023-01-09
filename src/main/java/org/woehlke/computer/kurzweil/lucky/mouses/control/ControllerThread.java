@@ -2,7 +2,6 @@ package org.woehlke.computer.kurzweil.lucky.mouses.control;
 
 import lombok.extern.slf4j.Slf4j;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.KochSnowflakeModel;
-import org.woehlke.computer.kurzweil.lucky.mouses.model.LuckyMousesModel;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;
 
 /**
@@ -14,7 +13,7 @@ import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;
  * @see <a href="https://github.com/Computer-Kurzweil/mandelbrot-julia">Github Repository</a>
  * @see <a href="https://java.woehlke.org/mandelbrot-julia/">Maven Project Repository</a>
  *
- * @see LuckyMousesModel
+ * @see KochSnowflakeModel
  * @see LuckyMousesFrame
  *
  * @see Thread

@@ -1,44 +1,64 @@
-package org.woehlke.computer.kurzweil.lucky.mouses.model.turing;
+package org.woehlke.computer.kurzweil.lucky.mouses.turing;
 
 
-
+import lombok.extern.java.Log;
 import org.junit.jupiter.api.Test;
 
-import java.util.logging.Logger;
-
+/**
+ * (C) 2006 - 2023 Thomas Woehlke.
+ *
+ * @author Thomas Woehlke
+ */
+@Log
 public class TuringPositionsTest {
 
-    public static Logger log = Logger.getLogger(TuringPositionsTest.class.getName());
-
+    /**
+     * run Test
+     */
     @Test
     public void startTest() {
         log.info("startTest start");
     }
 
+    /**
+     * run Test
+     */
     @Test
     public void markFirstSetPositionTest(){
         log.info("markFirstSetPositionTest start");
 
     }
 
+    /**
+     * run Test
+     */
     @Test
     public void goForwardTest() {
         log.info("goForwardTest start");
 
     }
 
+    /**
+     * run Test
+     */
     @Test
     public void turnRightTest() {
         log.info("turnRightTest start");
 
     }
 
+    /**
+     * run Test
+     */
     @Test
     public void turnLeftTest() {
         log.info("turnLeftTest start");
 
     }
 
+    /**
+     * run Test
+     */
     @Test
     public void isFinishedWalkAroundTest() {
         log.info("isFinishedWalkAroundTest start");
