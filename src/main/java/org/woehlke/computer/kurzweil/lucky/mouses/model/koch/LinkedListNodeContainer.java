@@ -1,7 +1,7 @@
 package org.woehlke.computer.kurzweil.lucky.mouses.model.koch;
 
 import lombok.Getter;
-import org.woehlke.computer.kurzweil.kochsnowflake.ComputerKurzweilProperties;
+import org.woehlke.computer.kurzweil.lucky.mouses.config.ComputerKurzweilProperties;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.geometry.LatticeDimension;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.geometry.LatticePoint;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;

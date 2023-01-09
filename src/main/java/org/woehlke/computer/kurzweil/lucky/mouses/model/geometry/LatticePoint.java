@@ -2,7 +2,7 @@ package org.woehlke.computer.kurzweil.lucky.mouses.model.geometry;
 
 import lombok.*;
 import lombok.extern.log4j.Log4j2;
-import org.woehlke.computer.kurzweil.kochsnowflake.ComputerKurzweilProperties;
+import org.woehlke.computer.kurzweil.lucky.mouses.config.ComputerKurzweilProperties;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.koch.LinkedListNode;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;
 
