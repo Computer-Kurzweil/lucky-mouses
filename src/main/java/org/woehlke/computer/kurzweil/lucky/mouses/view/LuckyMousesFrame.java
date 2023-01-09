@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.woehlke.computer.kurzweil.lucky.mouses.config.ComputerKurzweilProperties;
 import org.woehlke.computer.kurzweil.lucky.mouses.control.ControllerThread;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.KochSnowflakeModel;
-import org.woehlke.computer.kurzweil.lucky.mouses.view.canvas.KochSnowflakeCanvas;
+import org.woehlke.computer.kurzweil.lucky.mouses.view.canvas.LuckyMousesCanvas;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.labels.PanelButtons;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.labels.PanelCopyright;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.labels.PanelSubtitle;
@@ -23,7 +23,7 @@ import java.io.Serializable;
  * @author Thomas Woehlke
  *
  * @see ControllerThread
- * @see KochSnowflakeCanvas
+ * @see LuckyMousesCanvas
  * @see KochSnowflakeModel
  * @see PanelSubtitle
  * @see PanelCopyright
@@ -57,7 +57,7 @@ public class LuckyMousesFrame extends JFrame implements ImageObserver,
     private final PanelButtons panelButtons;
 
     private volatile ControllerThread controller;
-    private volatile KochSnowflakeCanvas canvas;
+    private volatile LuckyMousesCanvas canvas;
     private volatile KochSnowflakeModel model;
     private volatile Rectangle rectangleBounds;
     private volatile Dimension dimensionSize;
@@ -66,7 +66,7 @@ public class LuckyMousesFrame extends JFrame implements ImageObserver,
         super(config.getLuckyMouses().getView().getTitle());
         this.config = config;
         this.model = new KochSnowflakeModel(this);
-        this.canvas = new KochSnowflakeCanvas( this.model);
+        this.canvas = new LuckyMousesCanvas( this.model);
         this.controller = new ControllerThread(model, this);
         this.panelSubtitle = new PanelSubtitle(config.getLuckyMouses().getView().getSubtitle());
         this.panelButtons = new PanelButtons(this.model, this, config);

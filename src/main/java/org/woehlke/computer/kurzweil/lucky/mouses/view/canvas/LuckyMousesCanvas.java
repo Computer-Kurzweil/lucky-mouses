@@ -28,7 +28,7 @@ import java.util.List;
  * Time: 00:51:51
  */
 @Getter
-public class KochSnowflakeCanvas extends JComponent  {
+public class LuckyMousesCanvas extends JComponent  {
 
     @Serial
     private final static long serialVersionUID = 242L;
@@ -36,7 +36,7 @@ public class KochSnowflakeCanvas extends JComponent  {
     private volatile KochSnowflakeModel model;
     private volatile Dimension preferredSize;
 
-    public KochSnowflakeCanvas(KochSnowflakeModel model) {
+    public LuckyMousesCanvas(KochSnowflakeModel model) {
         this.model = model;
         int width = this.model.getWorldDimensions().getWidth();
         int height = this.model.getWorldDimensions().getHeight();
