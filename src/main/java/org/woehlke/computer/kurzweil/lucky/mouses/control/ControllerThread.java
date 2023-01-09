@@ -1,6 +1,7 @@
 package org.woehlke.computer.kurzweil.lucky.mouses.control;
 
 import lombok.extern.slf4j.Slf4j;
+import org.woehlke.computer.kurzweil.lucky.mouses.model.KochSnowflakeModel;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.LuckyMousesModel;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;
 
@@ -25,29 +26,34 @@ import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;
 @Slf4j
 public class ControllerThread extends Thread implements Runnable {
 
-    private volatile LuckyMousesModel model;
-    private volatile LuckyMousesFrame frame;
+    private volatile KochSnowflakeModel model;
+    private volatile LuckyMousesFrame view;
 
     private volatile Boolean goOn;
-    private final int threadSsleepTime;
+    private final int threadSleepTime;
+    private final int maxIterations;
 
-    public ControllerThread(LuckyMousesModel model, LuckyMousesFrame frame) {
-        this.frame = frame;
+    public ControllerThread(KochSnowflakeModel model, LuckyMousesFrame frame) {
+        this.view = frame;
         this.model = model;
         this.goOn = Boolean.TRUE;
-        this.threadSsleepTime = 1;
+        this.threadSleepTime = this.view.getConfig().getLuckyMouses().getControl().getThreadSleepTime();
+        this.maxIterations = this.view.getConfig().getLuckyMouses().getControl().getMaxIterations();
     }
 
     public void run() {
-        boolean doIt = goOn.booleanValue();
-        do {
-            doIt = isRunning();
-            if(this.model.step()){
-                frame.getCanvas().repaint();
+        int i = 0;
+        while (i < this.maxIterations) {
+            i++;
+            this.model.step();
+            this.view.getCanvas().repaint();
+            this.view.repaint();
+            try {
+                sleep( this.threadSleepTime);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-            try { sleep(threadSsleepTime); }
-            catch (InterruptedException e) { }
-        } while (doIt);
+        }
     }
 
     private synchronized boolean isRunning(){

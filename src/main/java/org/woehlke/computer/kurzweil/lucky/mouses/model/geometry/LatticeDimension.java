@@ -4,7 +4,7 @@ import lombok.*;
 import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.kochsnowflake.ComputerKurzweilProperties;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.koch.LinkedListNode;
-import org.woehlke.computer.kurzweil.lucky.mouses.view.KochSnowflakeFrame;
+import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;
 
 import java.io.Serializable;
 
@@ -14,7 +14,7 @@ import java.io.Serializable;
  * @author Thomas Woehlke
  *
  * @see ComputerKurzweilProperties
- * @see KochSnowflakeFrame
+ * @see LuckyMousesFrame
  * @see LatticeDimension
  *
  * @see LinkedListNode

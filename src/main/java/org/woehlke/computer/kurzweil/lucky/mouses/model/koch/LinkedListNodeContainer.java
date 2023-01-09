@@ -4,7 +4,7 @@ import lombok.Getter;
 import org.woehlke.computer.kurzweil.kochsnowflake.ComputerKurzweilProperties;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.geometry.LatticeDimension;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.geometry.LatticePoint;
-import org.woehlke.computer.kurzweil.lucky.mouses.view.KochSnowflakeFrame;
+import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.List;
  * @author Thomas Woehlke
  *
  * @see ComputerKurzweilProperties
- * @see KochSnowflakeFrame
+ * @see LuckyMousesFrame
  * @see LatticeDimension
  *
  * @see LinkedListNode
@@ -29,7 +29,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     static final long serialVersionUID = 242L;
 
-    private final KochSnowflakeFrame tab;
+    private final LuckyMousesFrame tab;
 
     private final LatticeDimension worldDimensions;
 
@@ -37,7 +37,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     private LinkedListNode currentNode;
 
-    public LinkedListNodeContainer(KochSnowflakeFrame tab, LatticeDimension worldDimensions){
+    public LinkedListNodeContainer(LuckyMousesFrame tab, LatticeDimension worldDimensions){
         this.tab = tab;
         this.worldDimensions = worldDimensions;
     }

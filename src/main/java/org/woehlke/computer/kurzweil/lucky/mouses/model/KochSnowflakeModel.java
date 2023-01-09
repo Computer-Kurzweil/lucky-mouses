@@ -4,7 +4,7 @@ import lombok.Getter;
 import org.woehlke.computer.kurzweil.kochsnowflake.ComputerKurzweilProperties;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.geometry.LatticeDimension;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.koch.LinkedListNodeContainer;
-import org.woehlke.computer.kurzweil.lucky.mouses.view.KochSnowflakeFrame;
+import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -15,7 +15,7 @@ import java.io.Serializable;
  * @author Thomas Woehlke
  *
  * @see ComputerKurzweilProperties
- * @see KochSnowflakeFrame
+ * @see LuckyMousesFrame
  * @see LinkedListNodeContainer
  *
  * @see <a href="https://github.com/Computer-Kurzweil/kochsnowflake">Github Repository</a>
@@ -29,16 +29,16 @@ public class KochSnowflakeModel implements Serializable {
     @Serial
     static final long serialVersionUID = 242L;
 
-    private volatile KochSnowflakeFrame tab;
+    private volatile LuckyMousesFrame tab;
     private volatile LinkedListNodeContainer linkedListNodeContainer;
 
     private final LatticeDimension worldDimensions;
 
-    public KochSnowflakeModel(KochSnowflakeFrame tab) {
+    public KochSnowflakeModel(LuckyMousesFrame tab) {
         this.tab = tab;
-        int scale = tab.getConfig().getKochsnowflake().getView().getScale();
-        int width = scale * tab.getConfig().getKochsnowflake().getView().getWidth();
-        int height = scale * tab.getConfig().getKochsnowflake().getView().getHeight();
+        int scale = tab.getConfig().getLuckyMouses().getView().getScale();
+        int width = scale * tab.getConfig().getLuckyMouses().getView().getWidth();
+        int height = scale * tab.getConfig().getLuckyMouses().getView().getHeight();
         this.worldDimensions = LatticeDimension.of(width,height);
         this.linkedListNodeContainer = new LinkedListNodeContainer(tab, this.worldDimensions);
     }
@@ -49,5 +49,27 @@ public class KochSnowflakeModel implements Serializable {
 
     public void start(){
         this.linkedListNodeContainer.start();
+    }
+
+    public void runA() {
+        System.out.println("run A");
+    }
+
+    public void runB() {
+        System.out.println("run B");
+    }
+
+    public void runC() {
+        System.out.println("run C");
+    }
+
+    public void runD() { System.out.println("run D"); }
+
+    public void runE() {
+        System.out.println("run E");
+    }
+
+    public void runF() {
+        System.out.println("run F");
     }
 }

@@ -1,8 +1,8 @@
 package org.woehlke.computer.kurzweil.lucky.mouses.view.canvas;
 
+import lombok.Getter;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.KochSnowflakeModel;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.koch.LinkedListNode;
-import org.woehlke.computer.kurzweil.lucky.mouses.view.KochSnowflakeFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,6 +27,7 @@ import java.util.List;
  * Date: 05.02.2006
  * Time: 00:51:51
  */
+@Getter
 public class KochSnowflakeCanvas extends JComponent  {
 
     @Serial
@@ -35,8 +36,8 @@ public class KochSnowflakeCanvas extends JComponent  {
     private volatile KochSnowflakeModel model;
     private volatile Dimension preferredSize;
 
-    public KochSnowflakeCanvas(KochSnowflakeFrame tab) {
-        this.model = tab.getModel();
+    public KochSnowflakeCanvas(KochSnowflakeModel model) {
+        this.model = model;
         int width = this.model.getWorldDimensions().getWidth();
         int height = this.model.getWorldDimensions().getHeight();
         this.preferredSize = new Dimension(width, height);

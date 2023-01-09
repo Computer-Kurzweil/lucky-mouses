@@ -181,7 +181,8 @@ luckyMouses:
     buttonsRunE: "Run E"
     buttonsRunF: "Run F"
   control:
-    threadSleepTime: 50
+    threadSleepTime: 3000
+    maxIterations: 6
 wator:
   view:
     title: 'WaTor'
