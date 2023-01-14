@@ -206,6 +206,15 @@ public class LinkedListNodeContainer implements Serializable {
                 n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
                 break;
             case 'B':
+                n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
+                n[1] = new LinkedListNode(latticePoints.get("bottomRight"));
+                n[2] = new LinkedListNode(latticePoints.get("leftBottom"));
+                n[3] = new LinkedListNode(latticePoints.get("rightUpper"));
+                n[4] = new LinkedListNode(latticePoints.get("upperRight"));
+                n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
+                n[6] = new LinkedListNode(latticePoints.get("rightBottom"));
+                n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
+                break;
             case 'C':
             case 'D':
             case 'E':
