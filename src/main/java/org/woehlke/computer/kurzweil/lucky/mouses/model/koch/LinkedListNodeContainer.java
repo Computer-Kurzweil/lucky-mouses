@@ -52,6 +52,12 @@ public class LinkedListNodeContainer implements Serializable {
     }
 
     public void start(){
+        setupA();
+        currentNode = this.startNode.get(0);
+        firstStep = true;
+    }
+
+    private void setupPoints(){
         int marginY = 0;
         int padding = 20;
         marginY += padding;
@@ -89,15 +95,11 @@ public class LinkedListNodeContainer implements Serializable {
         latticePoints.put( "bottomRight", bottomRight);
         latticePoints.put( "leftUpper", leftUpper);
         latticePoints.put( "leftBottom", leftBottom);
-
-        setupA();
-
-        currentNode = this.startNode.get(0);
-        firstStep = true;
     }
 
     public void setupA(){
         log.info("setup A");
+        setupPoints();
         LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
         LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
         LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
@@ -126,6 +128,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     public void setupB(){
         log.info("setup B");
+        setupPoints();
         LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
         LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
         LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
@@ -154,6 +157,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     public void setupC(){
         log.info("setup C");
+        setupPoints();
         LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
         LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
         LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
@@ -182,6 +186,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     public void setupD(){
         log.info("setup D");
+        setupPoints();
         LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
         LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
         LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
@@ -210,6 +215,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     public void setupE(){
         log.info("setup E");
+        setupPoints();
         LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
         LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
         LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
@@ -238,6 +244,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     public void setupF(){
         log.info("setup F");
+        setupPoints();
         LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
         LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
         LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
@@ -266,6 +273,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     public void setupG(){
         log.info("setup G");
+        setupPoints();
         LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
         LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
         LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
@@ -294,6 +302,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     public void setupH(){
         log.info("setup H");
+        setupPoints();
         LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
         LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
         LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
@@ -322,6 +331,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     public void setupI(){
         log.info("setup I");
+        setupPoints();
         LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
         LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
         LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
@@ -350,6 +360,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     public void setupJ(){
         log.info("setup J");
+        setupPoints();
         LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
         LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
         LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
@@ -378,6 +389,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     public void setupK(){
         log.info("setup K");
+        setupPoints();
         LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
         LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
         LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
