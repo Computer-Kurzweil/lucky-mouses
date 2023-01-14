@@ -48,6 +48,7 @@ public class LinkedListNodeContainer implements Serializable {
     public LinkedListNodeContainer(LuckyMousesFrame tab, LatticeDimension worldDimensions){
         this.tab = tab;
         this.worldDimensions = worldDimensions;
+        firstStep = true;
     }
 
     public void start(){
