@@ -35,7 +35,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     private List<String> latticePointKeys = new ArrayList<>();
     private Map<String,LatticePoint> latticePoints = new HashMap<>();
-    private Queue<List<LinkedListNode>> startNode = new ArrayDeque<>();
+    private Deque<List<LinkedListNode>> startNode = new ArrayDeque<>();
     private LinkedListNode currentNode;
     private Boolean firstStep;
 

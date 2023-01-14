@@ -8,9 +8,8 @@ import org.woehlke.computer.kurzweil.lucky.mouses.model.mouses.LinkedListNode;
 import javax.swing.*;
 import java.awt.*;
 import java.io.Serial;
+import java.util.*;
 import java.util.List;
-import java.util.Queue;
-import java.util.Stack;
 
 
 /**
@@ -66,9 +65,11 @@ public class LuckyMousesCanvas extends JComponent  {
 
     private void renderModel(Graphics g){
         g.setColor(Color.WHITE);
-        Queue<List<LinkedListNode>> startNode = model.getLinkedListNodeContainer().getStartNode();
-        for(List<LinkedListNode> nn : startNode) {
-            for (LinkedListNode o : nn) {
+        Deque<List<LinkedListNode>> startNode = model.getLinkedListNodeContainer().getStartNode();
+        Iterator<List<LinkedListNode>> it = startNode.iterator();
+        while(it.hasNext()){
+            List<LinkedListNode> l = it.next();
+            for (LinkedListNode o:l) {
                 g.drawLine(
                     o.getPoint().getX(),
                     o.getPoint().getY(),
