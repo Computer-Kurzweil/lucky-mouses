@@ -64,7 +64,7 @@ public class LuckyMousesCanvas extends JComponent  {
             this.model.getWorldDimensions().getWidth(),
             this.model.getWorldDimensions().getHeight()
         );
-        g.setColor(Color.CYAN);
+        g.setColor(Color.BLACK);
         g.fillRect(
             paddingX,0,
             this.model.getWorldDimensions().getHeight(),
