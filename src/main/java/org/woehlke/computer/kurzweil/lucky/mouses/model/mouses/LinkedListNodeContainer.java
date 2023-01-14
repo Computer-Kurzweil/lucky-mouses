@@ -8,10 +8,7 @@ import org.woehlke.computer.kurzweil.lucky.mouses.model.geometry.LatticePoint;
 import org.woehlke.computer.kurzweil.lucky.mouses.view.LuckyMousesFrame;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Koch Snowflake. A Fractal with self self-similarity.
@@ -34,15 +31,12 @@ public class LinkedListNodeContainer implements Serializable {
     static final long serialVersionUID = 242L;
 
     private final LuckyMousesFrame tab;
-
     private final LatticeDimension worldDimensions;
 
     private List<String> latticePointKeys = new ArrayList<>();
     private Map<String,LatticePoint> latticePoints = new HashMap<>();
-
-    private List<LinkedListNode> startNode = new ArrayList<>();
+    private Stack<List<LinkedListNode>> startNode = new Stack<>();
     private LinkedListNode currentNode;
-
     private Boolean firstStep;
 
     public LinkedListNodeContainer(LuckyMousesFrame tab, LatticeDimension worldDimensions){
@@ -53,7 +47,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     public void start(){
         setupA();
-        currentNode = this.startNode.get(0);
+        currentNode = this.startNode.peek().get(0);
         firstStep = true;
     }
 
@@ -100,332 +94,197 @@ public class LinkedListNodeContainer implements Serializable {
     public void setupA(){
         log.info("setup A");
         setupPoints();
-        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
-        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
-        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
-        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
-        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
-        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
-        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
-        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
-        n0.setNext(n1);
-        n1.setNext(n2);
-        n2.setNext(n3);
-        n3.setNext(n4);
-        n4.setNext(n5);
-        n5.setNext(n6);
-        n6.setNext(n7);
-        n7.setNext(n0);
-        this.startNode.add(n0);
-        this.startNode.add(n1);
-        this.startNode.add(n2);
-        this.startNode.add(n3);
-        this.startNode.add(n4);
-        this.startNode.add(n5);
-        this.startNode.add(n6);
-        this.startNode.add(n7);
+        LinkedListNode n[] = new LinkedListNode[8];
+        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
+        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
+        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
+        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
+        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
+        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
+        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
+        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
+        setupNodes(n);
     }
 
     public void setupB(){
         log.info("setup B");
         setupPoints();
-        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
-        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
-        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
-        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
-        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
-        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
-        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
-        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
-        n0.setNext(n1);
-        n1.setNext(n2);
-        n2.setNext(n3);
-        n3.setNext(n4);
-        n4.setNext(n5);
-        n5.setNext(n6);
-        n6.setNext(n7);
-        n7.setNext(n0);
-        this.startNode.add(n0);
-        this.startNode.add(n1);
-        this.startNode.add(n2);
-        this.startNode.add(n3);
-        this.startNode.add(n4);
-        this.startNode.add(n5);
-        this.startNode.add(n6);
-        this.startNode.add(n7);
+        LinkedListNode n[] = new LinkedListNode[8];
+        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
+        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
+        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
+        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
+        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
+        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
+        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
+        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
+        setupNodes(n);
     }
 
     public void setupC(){
         log.info("setup C");
         setupPoints();
-        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
-        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
-        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
-        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
-        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
-        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
-        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
-        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
-        n0.setNext(n1);
-        n1.setNext(n2);
-        n2.setNext(n3);
-        n3.setNext(n4);
-        n4.setNext(n5);
-        n5.setNext(n6);
-        n6.setNext(n7);
-        n7.setNext(n0);
-        this.startNode.add(n0);
-        this.startNode.add(n1);
-        this.startNode.add(n2);
-        this.startNode.add(n3);
-        this.startNode.add(n4);
-        this.startNode.add(n5);
-        this.startNode.add(n6);
-        this.startNode.add(n7);
+        LinkedListNode n[] = new LinkedListNode[8];
+        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
+        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
+        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
+        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
+        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
+        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
+        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
+        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
+        setupNodes(n);
     }
 
     public void setupD(){
         log.info("setup D");
         setupPoints();
-        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
-        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
-        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
-        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
-        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
-        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
-        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
-        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
-        n0.setNext(n1);
-        n1.setNext(n2);
-        n2.setNext(n3);
-        n3.setNext(n4);
-        n4.setNext(n5);
-        n5.setNext(n6);
-        n6.setNext(n7);
-        n7.setNext(n0);
-        this.startNode.add(n0);
-        this.startNode.add(n1);
-        this.startNode.add(n2);
-        this.startNode.add(n3);
-        this.startNode.add(n4);
-        this.startNode.add(n5);
-        this.startNode.add(n6);
-        this.startNode.add(n7);
+        LinkedListNode n[] = new LinkedListNode[8];
+        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
+        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
+        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
+        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
+        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
+        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
+        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
+        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
+        setupNodes(n);
     }
 
     public void setupE(){
         log.info("setup E");
         setupPoints();
-        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
-        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
-        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
-        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
-        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
-        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
-        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
-        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
-        n0.setNext(n1);
-        n1.setNext(n2);
-        n2.setNext(n3);
-        n3.setNext(n4);
-        n4.setNext(n5);
-        n5.setNext(n6);
-        n6.setNext(n7);
-        n7.setNext(n0);
-        this.startNode.add(n0);
-        this.startNode.add(n1);
-        this.startNode.add(n2);
-        this.startNode.add(n3);
-        this.startNode.add(n4);
-        this.startNode.add(n5);
-        this.startNode.add(n6);
-        this.startNode.add(n7);
+        LinkedListNode n[] = new LinkedListNode[8];
+        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
+        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
+        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
+        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
+        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
+        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
+        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
+        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
+        setupNodes(n);
     }
 
     public void setupF(){
         log.info("setup F");
         setupPoints();
-        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
-        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
-        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
-        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
-        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
-        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
-        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
-        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
-        n0.setNext(n1);
-        n1.setNext(n2);
-        n2.setNext(n3);
-        n3.setNext(n4);
-        n4.setNext(n5);
-        n5.setNext(n6);
-        n6.setNext(n7);
-        n7.setNext(n0);
-        this.startNode.add(n0);
-        this.startNode.add(n1);
-        this.startNode.add(n2);
-        this.startNode.add(n3);
-        this.startNode.add(n4);
-        this.startNode.add(n5);
-        this.startNode.add(n6);
-        this.startNode.add(n7);
+        LinkedListNode n[] = new LinkedListNode[8];
+        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
+        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
+        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
+        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
+        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
+        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
+        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
+        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
+        setupNodes(n);
     }
 
     public void setupG(){
         log.info("setup G");
         setupPoints();
-        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
-        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
-        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
-        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
-        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
-        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
-        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
-        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
-        n0.setNext(n1);
-        n1.setNext(n2);
-        n2.setNext(n3);
-        n3.setNext(n4);
-        n4.setNext(n5);
-        n5.setNext(n6);
-        n6.setNext(n7);
-        n7.setNext(n0);
-        this.startNode.add(n0);
-        this.startNode.add(n1);
-        this.startNode.add(n2);
-        this.startNode.add(n3);
-        this.startNode.add(n4);
-        this.startNode.add(n5);
-        this.startNode.add(n6);
-        this.startNode.add(n7);
+        LinkedListNode n[] = new LinkedListNode[8];
+        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
+        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
+        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
+        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
+        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
+        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
+        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
+        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
+        setupNodes(n);
     }
 
     public void setupH(){
         log.info("setup H");
         setupPoints();
-        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
-        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
-        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
-        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
-        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
-        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
-        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
-        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
-        n0.setNext(n1);
-        n1.setNext(n2);
-        n2.setNext(n3);
-        n3.setNext(n4);
-        n4.setNext(n5);
-        n5.setNext(n6);
-        n6.setNext(n7);
-        n7.setNext(n0);
-        this.startNode.add(n0);
-        this.startNode.add(n1);
-        this.startNode.add(n2);
-        this.startNode.add(n3);
-        this.startNode.add(n4);
-        this.startNode.add(n5);
-        this.startNode.add(n6);
-        this.startNode.add(n7);
+        LinkedListNode n[] = new LinkedListNode[8];
+        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
+        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
+        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
+        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
+        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
+        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
+        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
+        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
+        setupNodes(n);
     }
 
     public void setupI(){
         log.info("setup I");
         setupPoints();
-        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
-        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
-        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
-        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
-        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
-        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
-        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
-        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
-        n0.setNext(n1);
-        n1.setNext(n2);
-        n2.setNext(n3);
-        n3.setNext(n4);
-        n4.setNext(n5);
-        n5.setNext(n6);
-        n6.setNext(n7);
-        n7.setNext(n0);
-        this.startNode.add(n0);
-        this.startNode.add(n1);
-        this.startNode.add(n2);
-        this.startNode.add(n3);
-        this.startNode.add(n4);
-        this.startNode.add(n5);
-        this.startNode.add(n6);
-        this.startNode.add(n7);
+        LinkedListNode n[] = new LinkedListNode[8];
+        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
+        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
+        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
+        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
+        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
+        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
+        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
+        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
+        setupNodes(n);
     }
 
     public void setupJ(){
         log.info("setup J");
         setupPoints();
-        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
-        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
-        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
-        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
-        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
-        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
-        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
-        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
-        n0.setNext(n1);
-        n1.setNext(n2);
-        n2.setNext(n3);
-        n3.setNext(n4);
-        n4.setNext(n5);
-        n5.setNext(n6);
-        n6.setNext(n7);
-        n7.setNext(n0);
-        this.startNode.add(n0);
-        this.startNode.add(n1);
-        this.startNode.add(n2);
-        this.startNode.add(n3);
-        this.startNode.add(n4);
-        this.startNode.add(n5);
-        this.startNode.add(n6);
-        this.startNode.add(n7);
+        LinkedListNode n[] = new LinkedListNode[8];
+        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
+        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
+        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
+        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
+        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
+        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
+        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
+        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
+        setupNodes(n);
     }
 
     public void setupK(){
         log.info("setup K");
         setupPoints();
-        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
-        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
-        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
-        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
-        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
-        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
-        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
-        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
-        n0.setNext(n1);
-        n1.setNext(n2);
-        n2.setNext(n3);
-        n3.setNext(n4);
-        n4.setNext(n5);
-        n5.setNext(n6);
-        n6.setNext(n7);
-        n7.setNext(n0);
-        this.startNode.add(n0);
-        this.startNode.add(n1);
-        this.startNode.add(n2);
-        this.startNode.add(n3);
-        this.startNode.add(n4);
-        this.startNode.add(n5);
-        this.startNode.add(n6);
-        this.startNode.add(n7);
+        LinkedListNode n[] = new LinkedListNode[8];
+        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
+        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
+        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
+        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
+        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
+        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
+        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
+        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
+        setupNodes(n);
     }
 
+    public void setupNodes(LinkedListNode n[]){
+        n[0].setNext(n[1]);
+        n[1].setNext(n[2]);
+        n[2].setNext(n[3]);
+        n[3].setNext(n[4]);
+        n[4].setNext(n[5]);
+        n[5].setNext(n[6]);
+        n[6].setNext(n[7]);
+        n[7].setNext(n[0]);
+        List<LinkedListNode> nn = new ArrayList<>();
+        for(LinkedListNode o:n){
+            nn.add(o);
+        }
+        this.startNode.add(nn);
+    }
     public void step() {
         log.info("step");
         double wayFraction = 0.1;
-        for(LinkedListNode o : startNode){
+        List<LinkedListNode> nn = new ArrayList<>();
+        for(LinkedListNode node : startNode.pop()){
+            LinkedListNode o = node.copy();
             LatticePoint thisPoint = o.getPoint();
-            LatticePoint nextPoint = o.getNext().getPoint();
+            LatticePoint nextPoint = o.getNext().getNext().getPoint();
             LatticePoint delta = thisPoint.delta(nextPoint).scalarMultiplied(wayFraction);
             LatticePoint thisPointNew = thisPoint.plus(delta);
             o.setPoint(thisPointNew);
+            nn.add(o);
         }
+        startNode.push(nn);
         firstStep = false;
     }
 }

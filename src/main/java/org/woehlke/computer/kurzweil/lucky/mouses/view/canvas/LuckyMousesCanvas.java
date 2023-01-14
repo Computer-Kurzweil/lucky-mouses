@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.Serial;
 import java.util.List;
+import java.util.Stack;
 
 
 /**
@@ -53,19 +54,27 @@ public class LuckyMousesCanvas extends JComponent  {
         log.info("paint");
         //this.setSize(this.preferredSize);
         //this.setPreferredSize(preferredSize);
+        renderBackground(g);
         renderModel(g);
     }
 
-    private void renderModel(Graphics g){
-        List<LinkedListNode> startNode = model.getLinkedListNodeContainer().getStartNode();
+    private void renderBackground(Graphics g){
         g.setColor(Color.BLACK);
-        for(LinkedListNode o : startNode) {
-            g.drawLine(
-                o.getPoint().getX(),
-                o.getPoint().getY(),
-                o.getNext().getPoint().getX(),
-                o.getNext().getPoint().getY()
-            );
+        g.fillRect(0,0, this.preferredSize.width,this.preferredSize.height);
+    }
+
+    private void renderModel(Graphics g){
+        Stack<List<LinkedListNode>> startNode = model.getLinkedListNodeContainer().getStartNode();
+        g.setColor(Color.WHITE);
+        for(List<LinkedListNode> nn : startNode) {
+            for (LinkedListNode o : nn) {
+                g.drawLine(
+                    o.getPoint().getX(),
+                    o.getPoint().getY(),
+                    o.getNext().getPoint().getX(),
+                    o.getNext().getPoint().getY()
+                );
+            }
         }
     }
 
