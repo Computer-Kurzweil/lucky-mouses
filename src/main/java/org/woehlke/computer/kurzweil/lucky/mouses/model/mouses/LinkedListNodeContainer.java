@@ -62,6 +62,8 @@ public class LinkedListNodeContainer implements Serializable {
         int octagonSidePart = Double.valueOf(Math.abs(octagonSidePartDouble)).intValue();
         int marginX = (this.worldDimensions.getWidth() - octagonSide) / 2;
 
+        latticePoints.clear();
+
         int x1 = marginX + octagonSidePart * 0;
         int x2 = marginX + octagonSidePart * 1;
         int x3 = marginX + octagonSidePart * 2;
@@ -94,169 +96,122 @@ public class LinkedListNodeContainer implements Serializable {
     public void setupA(){
         log.info("setup A");
         setupPoints();
-        LinkedListNode n[] = new LinkedListNode[8];
-        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
-        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
-        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
-        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
-        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
-        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
-        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
-        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
-        setupNodes(n);
+        LinkedListNode n[] = setupNodesbyPoint('A');
+        List<LinkedListNode> nn = setupNodesSetNext(n);
+        this.startNode.push(nn);
     }
 
     public void setupB(){
         log.info("setup B");
         setupPoints();
-        LinkedListNode n[] = new LinkedListNode[8];
-        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
-        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
-        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
-        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
-        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
-        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
-        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
-        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
-        setupNodes(n);
+        LinkedListNode n[] = setupNodesbyPoint('B');
+        List<LinkedListNode> nn = setupNodesSetNext(n);
+        this.startNode.push(nn);
     }
 
     public void setupC(){
         log.info("setup C");
         setupPoints();
-        LinkedListNode n[] = new LinkedListNode[8];
-        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
-        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
-        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
-        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
-        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
-        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
-        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
-        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
-        setupNodes(n);
+        LinkedListNode n[] = setupNodesbyPoint('C');
+        List<LinkedListNode> nn = setupNodesSetNext(n);
+        this.startNode.push(nn);
     }
 
     public void setupD(){
         log.info("setup D");
         setupPoints();
-        LinkedListNode n[] = new LinkedListNode[8];
-        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
-        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
-        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
-        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
-        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
-        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
-        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
-        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
-        setupNodes(n);
+        LinkedListNode n[] = setupNodesbyPoint('D');
+        List<LinkedListNode> nn = setupNodesSetNext(n);
+        this.startNode.push(nn);
     }
 
     public void setupE(){
         log.info("setup E");
         setupPoints();
-        LinkedListNode n[] = new LinkedListNode[8];
-        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
-        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
-        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
-        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
-        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
-        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
-        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
-        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
-        setupNodes(n);
+        LinkedListNode n[] = setupNodesbyPoint('E');
+        List<LinkedListNode> nn = setupNodesSetNext(n);
+        this.startNode.push(nn);
     }
 
     public void setupF(){
         log.info("setup F");
         setupPoints();
-        LinkedListNode n[] = new LinkedListNode[8];
-        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
-        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
-        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
-        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
-        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
-        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
-        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
-        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
-        setupNodes(n);
+        LinkedListNode n[] = setupNodesbyPoint('F');
+        List<LinkedListNode> nn = setupNodesSetNext(n);
+        this.startNode.push(nn);
     }
 
     public void setupG(){
         log.info("setup G");
         setupPoints();
-        LinkedListNode n[] = new LinkedListNode[8];
-        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
-        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
-        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
-        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
-        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
-        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
-        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
-        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
-        setupNodes(n);
+        LinkedListNode n[] = setupNodesbyPoint('G');
+        List<LinkedListNode> nn = setupNodesSetNext(n);
+        this.startNode.push(nn);
     }
 
     public void setupH(){
         log.info("setup H");
         setupPoints();
-        LinkedListNode n[] = new LinkedListNode[8];
-        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
-        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
-        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
-        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
-        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
-        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
-        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
-        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
-        setupNodes(n);
+        LinkedListNode n[] = setupNodesbyPoint('H');
+        List<LinkedListNode> nn = setupNodesSetNext(n);
+        this.startNode.push(nn);
     }
 
     public void setupI(){
         log.info("setup I");
         setupPoints();
-        LinkedListNode n[] = new LinkedListNode[8];
-        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
-        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
-        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
-        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
-        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
-        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
-        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
-        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
-        setupNodes(n);
+        LinkedListNode n[] = setupNodesbyPoint('I');
+        List<LinkedListNode> nn = setupNodesSetNext(n);
+        this.startNode.push(nn);
     }
 
     public void setupJ(){
         log.info("setup J");
         setupPoints();
-        LinkedListNode n[] = new LinkedListNode[8];
-        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
-        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
-        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
-        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
-        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
-        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
-        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
-        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
-        setupNodes(n);
+        LinkedListNode n[] = setupNodesbyPoint('J');
+        List<LinkedListNode> nn = setupNodesSetNext(n);
+        this.startNode.push(nn);
     }
 
     public void setupK(){
         log.info("setup K");
         setupPoints();
-        LinkedListNode n[] = new LinkedListNode[8];
-        n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
-        n[1] = new LinkedListNode(latticePoints.get("upperRight"));
-        n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
-        n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
-        n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
-        n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
-        n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
-        n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
-        setupNodes(n);
+        LinkedListNode n[] = setupNodesbyPoint('K');
+        List<LinkedListNode> nn = setupNodesSetNext(n);
+        this.startNode.push(nn);
     }
 
-    public void setupNodes(LinkedListNode n[]){
+    public LinkedListNode[] setupNodesbyPoint(char k){
+        LinkedListNode n[] = new LinkedListNode[8];
+        switch (k){
+            case 'A':
+            case 'B':
+            case 'C':
+            case 'D':
+            case 'E':
+            case 'F':
+            case 'G':
+            case 'H':
+            case 'I':
+            case 'J':
+            case 'K':
+                n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
+                n[1] = new LinkedListNode(latticePoints.get("upperRight"));
+                n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
+                n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
+                n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
+                n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
+                n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
+                n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
+                break;
+            default:
+                break;
+        }
+        return n;
+    }
+
+    public List<LinkedListNode> setupNodesSetNext(LinkedListNode n[]){
+        this.startNode.clear();
         n[0].setNext(n[1]);
         n[1].setNext(n[2]);
         n[2].setNext(n[3]);
@@ -269,22 +224,45 @@ public class LinkedListNodeContainer implements Serializable {
         for(LinkedListNode o:n){
             nn.add(o);
         }
-        this.startNode.add(nn);
+        return nn;
     }
+
+    public List<LinkedListNode> copyNodes(List<LinkedListNode> polygonOld){
+        LinkedListNode n[] = new LinkedListNode[8];
+        for (int i=0; i<8;i++){
+            n[i] = new LinkedListNode(polygonOld.get(i));
+        }
+        n[0].setNext(n[1]);
+        n[1].setNext(n[2]);
+        n[2].setNext(n[3]);
+        n[3].setNext(n[4]);
+        n[4].setNext(n[5]);
+        n[5].setNext(n[6]);
+        n[6].setNext(n[7]);
+        n[7].setNext(n[0]);
+        List<LinkedListNode> nn = new ArrayList<>();
+        for(LinkedListNode o:n){
+            nn.add(o);
+        }
+        return nn;
+    }
+
     public void step() {
         log.info("step");
         double wayFraction = 0.1;
-        List<LinkedListNode> nn = new ArrayList<>();
-        for(LinkedListNode node : startNode.pop()){
-            LinkedListNode o = node.copy();
-            LatticePoint thisPoint = o.getPoint();
-            LatticePoint nextPoint = o.getNext().getNext().getPoint();
-            LatticePoint delta = thisPoint.delta(nextPoint).scalarMultiplied(wayFraction);
-            LatticePoint thisPointNew = thisPoint.plus(delta);
-            o.setPoint(thisPointNew);
-            nn.add(o);
+        if(!startNode.empty()){
+            List<LinkedListNode> polygonOld = startNode.peek();
+            List<LinkedListNode> polygonNew = copyNodes(polygonOld);
+            for(LinkedListNode node : polygonOld){
+                LatticePoint thisPoint = node.getPoint();
+                LatticePoint nextPoint = node.getNext().getPoint();
+                LatticePoint delta = thisPoint.delta(nextPoint).scalarMultiplied(wayFraction);
+                LatticePoint thisPointNew = thisPoint.plus(delta);
+                LinkedListNode nodeNew = new LinkedListNode(thisPointNew);
+                polygonNew.add(nodeNew);
+            }
+            startNode.push(polygonNew);
         }
-        startNode.push(nn);
         firstStep = false;
     }
 }

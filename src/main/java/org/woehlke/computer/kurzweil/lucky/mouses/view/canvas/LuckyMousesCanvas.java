@@ -64,8 +64,8 @@ public class LuckyMousesCanvas extends JComponent  {
     }
 
     private void renderModel(Graphics g){
-        Stack<List<LinkedListNode>> startNode = model.getLinkedListNodeContainer().getStartNode();
         g.setColor(Color.WHITE);
+        Stack<List<LinkedListNode>> startNode = model.getLinkedListNodeContainer().getStartNode();
         for(List<LinkedListNode> nn : startNode) {
             for (LinkedListNode o : nn) {
                 g.drawLine(
