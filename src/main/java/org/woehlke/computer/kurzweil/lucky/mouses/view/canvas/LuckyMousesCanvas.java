@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.Serial;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 
@@ -65,7 +66,7 @@ public class LuckyMousesCanvas extends JComponent  {
 
     private void renderModel(Graphics g){
         g.setColor(Color.WHITE);
-        Stack<List<LinkedListNode>> startNode = model.getLinkedListNodeContainer().getStartNode();
+        Queue<List<LinkedListNode>> startNode = model.getLinkedListNodeContainer().getStartNode();
         for(List<LinkedListNode> nn : startNode) {
             for (LinkedListNode o : nn) {
                 g.drawLine(

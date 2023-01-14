@@ -35,7 +35,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     private List<String> latticePointKeys = new ArrayList<>();
     private Map<String,LatticePoint> latticePoints = new HashMap<>();
-    private Stack<List<LinkedListNode>> startNode = new Stack<>();
+    private Queue<List<LinkedListNode>> startNode = new ArrayDeque<>();
     private LinkedListNode currentNode;
     private Boolean firstStep;
 
@@ -98,7 +98,8 @@ public class LinkedListNodeContainer implements Serializable {
         setupPoints();
         LinkedListNode n[] = setupNodesbyPoint('A');
         List<LinkedListNode> nn = setupNodesSetNext(n);
-        this.startNode.push(nn);
+        this.startNode.clear();
+        this.startNode.add(nn);
     }
 
     public void setupB(){
@@ -106,7 +107,8 @@ public class LinkedListNodeContainer implements Serializable {
         setupPoints();
         LinkedListNode n[] = setupNodesbyPoint('B');
         List<LinkedListNode> nn = setupNodesSetNext(n);
-        this.startNode.push(nn);
+        this.startNode.clear();
+        this.startNode.add(nn);
     }
 
     public void setupC(){
@@ -114,7 +116,8 @@ public class LinkedListNodeContainer implements Serializable {
         setupPoints();
         LinkedListNode n[] = setupNodesbyPoint('C');
         List<LinkedListNode> nn = setupNodesSetNext(n);
-        this.startNode.push(nn);
+        this.startNode.clear();
+        this.startNode.add(nn);
     }
 
     public void setupD(){
@@ -122,7 +125,8 @@ public class LinkedListNodeContainer implements Serializable {
         setupPoints();
         LinkedListNode n[] = setupNodesbyPoint('D');
         List<LinkedListNode> nn = setupNodesSetNext(n);
-        this.startNode.push(nn);
+        this.startNode.clear();
+        this.startNode.add(nn);
     }
 
     public void setupE(){
@@ -130,7 +134,8 @@ public class LinkedListNodeContainer implements Serializable {
         setupPoints();
         LinkedListNode n[] = setupNodesbyPoint('E');
         List<LinkedListNode> nn = setupNodesSetNext(n);
-        this.startNode.push(nn);
+        this.startNode.clear();
+        this.startNode.add(nn);
     }
 
     public void setupF(){
@@ -138,7 +143,8 @@ public class LinkedListNodeContainer implements Serializable {
         setupPoints();
         LinkedListNode n[] = setupNodesbyPoint('F');
         List<LinkedListNode> nn = setupNodesSetNext(n);
-        this.startNode.push(nn);
+        this.startNode.clear();
+        this.startNode.add(nn);
     }
 
     public void setupG(){
@@ -146,7 +152,8 @@ public class LinkedListNodeContainer implements Serializable {
         setupPoints();
         LinkedListNode n[] = setupNodesbyPoint('G');
         List<LinkedListNode> nn = setupNodesSetNext(n);
-        this.startNode.push(nn);
+        this.startNode.clear();
+        this.startNode.add(nn);
     }
 
     public void setupH(){
@@ -154,7 +161,8 @@ public class LinkedListNodeContainer implements Serializable {
         setupPoints();
         LinkedListNode n[] = setupNodesbyPoint('H');
         List<LinkedListNode> nn = setupNodesSetNext(n);
-        this.startNode.push(nn);
+        this.startNode.clear();
+        this.startNode.add(nn);
     }
 
     public void setupI(){
@@ -162,7 +170,8 @@ public class LinkedListNodeContainer implements Serializable {
         setupPoints();
         LinkedListNode n[] = setupNodesbyPoint('I');
         List<LinkedListNode> nn = setupNodesSetNext(n);
-        this.startNode.push(nn);
+        this.startNode.clear();
+        this.startNode.add(nn);
     }
 
     public void setupJ(){
@@ -170,7 +179,8 @@ public class LinkedListNodeContainer implements Serializable {
         setupPoints();
         LinkedListNode n[] = setupNodesbyPoint('J');
         List<LinkedListNode> nn = setupNodesSetNext(n);
-        this.startNode.push(nn);
+        this.startNode.clear();
+        this.startNode.add(nn);
     }
 
     public void setupK(){
@@ -178,7 +188,8 @@ public class LinkedListNodeContainer implements Serializable {
         setupPoints();
         LinkedListNode n[] = setupNodesbyPoint('K');
         List<LinkedListNode> nn = setupNodesSetNext(n);
-        this.startNode.push(nn);
+        this.startNode.clear();
+        this.startNode.add(nn);
     }
 
     public LinkedListNode[] setupNodesbyPoint(char k){
@@ -211,7 +222,6 @@ public class LinkedListNodeContainer implements Serializable {
     }
 
     public List<LinkedListNode> setupNodesSetNext(LinkedListNode n[]){
-        this.startNode.clear();
         n[0].setNext(n[1]);
         n[1].setNext(n[2]);
         n[2].setNext(n[3]);
@@ -250,19 +260,15 @@ public class LinkedListNodeContainer implements Serializable {
     public void step() {
         log.info("step");
         double wayFraction = 0.1;
-        if(!startNode.empty()){
-            List<LinkedListNode> polygonOld = startNode.peek();
-            List<LinkedListNode> polygonNew = copyNodes(polygonOld);
-            for(LinkedListNode node : polygonOld){
-                LatticePoint thisPoint = node.getPoint();
-                LatticePoint nextPoint = node.getNext().getPoint();
-                LatticePoint delta = thisPoint.delta(nextPoint).scalarMultiplied(wayFraction);
-                LatticePoint thisPointNew = thisPoint.plus(delta);
-                LinkedListNode nodeNew = new LinkedListNode(thisPointNew);
-                polygonNew.add(nodeNew);
-            }
-            startNode.push(polygonNew);
+        List<LinkedListNode> polygonOld = startNode.element();
+        List<LinkedListNode> polygonNew = copyNodes(polygonOld);
+        for(int i = 0; i<polygonNew.size();i++){
+            LatticePoint thisPoint = polygonOld.get(i).getPoint();
+            LatticePoint nextPoint = polygonOld.get(i).getNext().getPoint();
+            LatticePoint delta = thisPoint.delta(nextPoint).scalarMultiplied(wayFraction);
+            LatticePoint thisPointNew = thisPoint.plus(delta);
+            polygonOld.get(i).setPoint(thisPointNew);
         }
-        firstStep = false;
+        startNode.add(polygonNew);
     }
 }

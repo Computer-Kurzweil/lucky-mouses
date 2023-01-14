@@ -45,13 +45,12 @@ public class ControllerThread extends Thread implements Runnable {
         while (i < this.maxIterations) {
             i++;
             this.view.getCanvas().repaint();
-            this.model.step();
-            //this.view.repaint();
             try {
                 sleep( this.threadSleepTime);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            this.model.step();
         }
     }
 }
