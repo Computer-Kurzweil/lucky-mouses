@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>lucky-mouses</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.4</version>
     <packaging>jar</packaging>
 
     <name>Lucky Mouses</name>
@@ -21,7 +21,7 @@
         <connection>scm:git:git@github.com:Computer-Kurzweil/lucky-mouses.git</connection>
         <developerConnection>scm:git:git@github.com:Computer-Kurzweil/lucky-mouses.git</developerConnection>
         <url>https://github.com/Computer-Kurzweil/lucky-mouses/tree/${project.scm.tag}</url>
-        <tag>HEAD</tag>
+        <tag>lucky-mouses-1.0.4</tag>
     </scm>
 
     <issueManagement>
