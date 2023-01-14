@@ -1,4 +1,4 @@
-package org.woehlke.computer.kurzweil.lucky.mouses.model.koch;
+package org.woehlke.computer.kurzweil.lucky.mouses.model.mouses;
 
 import lombok.*;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.geometry.LatticePoint;

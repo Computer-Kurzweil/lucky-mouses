@@ -3,7 +3,7 @@ package org.woehlke.computer.kurzweil.lucky.mouses.view.canvas;
 import lombok.Getter;
 import lombok.extern.java.Log;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.LuckyMousesModel;
-import org.woehlke.computer.kurzweil.lucky.mouses.model.koch.LinkedListNode;
+import org.woehlke.computer.kurzweil.lucky.mouses.model.mouses.LinkedListNode;
 
 import javax.swing.*;
 import java.awt.*;
