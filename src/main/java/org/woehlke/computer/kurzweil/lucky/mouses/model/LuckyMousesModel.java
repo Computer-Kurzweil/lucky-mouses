@@ -55,35 +55,41 @@ public class LuckyMousesModel implements Serializable {
         System.out.println("run A");
         this.linkedListNodeContainer.start();
         this.linkedListNodeContainer.setupA();
+        this.tab.restart();
     }
 
     public void runB() {
         System.out.println("run B");
         this.linkedListNodeContainer.start();
         this.linkedListNodeContainer.setupB();
+        this.tab.restart();
     }
 
     public void runC() {
         System.out.println("run C");
         this.linkedListNodeContainer.start();
         this.linkedListNodeContainer.setupC();
+        this.tab.restart();
     }
 
     public void runD() {
         System.out.println("run D");
         this.linkedListNodeContainer.start();
         this.linkedListNodeContainer.setupD();
+        this.tab.restart();
     }
 
     public void runE() {
         System.out.println("run E");
         this.linkedListNodeContainer.start();
         this.linkedListNodeContainer.setupE();
+        this.tab.restart();
     }
 
     public void runF() {
         System.out.println("run F");
         this.linkedListNodeContainer.start();
         this.linkedListNodeContainer.setupF();
+        this.tab.restart();
     }
 }

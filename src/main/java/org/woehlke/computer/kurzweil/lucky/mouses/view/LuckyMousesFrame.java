@@ -167,4 +167,12 @@ public class LuckyMousesFrame extends JFrame implements ImageObserver,
         this.controller.start();
         showMe();
     }
+
+    public void restart() {
+        //try {
+            this.controller.interrupt();
+        //} catch (InterruptedException e){}
+        this.controller = new ControllerThread(model, this);
+        this.controller.start();
+    }
 }
