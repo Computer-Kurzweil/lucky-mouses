@@ -46,7 +46,7 @@ public class ControllerThread extends Thread implements Runnable {
             i++;
             this.model.step();
             this.view.getCanvas().repaint();
-            this.view.repaint();
+            //this.view.repaint();
             try {
                 sleep( this.threadSleepTime);
             } catch (InterruptedException e) {

@@ -1,6 +1,7 @@
 package org.woehlke.computer.kurzweil.lucky.mouses.model.koch;
 
 import lombok.Getter;
+import lombok.extern.java.Log;
 import org.woehlke.computer.kurzweil.lucky.mouses.config.ComputerKurzweilProperties;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.geometry.LatticeDimension;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.geometry.LatticePoint;
@@ -26,6 +27,7 @@ import java.util.Map;
  * @see <a href="https://github.com/Computer-Kurzweil/kochsnowflake">Github Repository</a>
  * @see <a href="https://java.woehlke.org/kochsnowflake/">Maven Project Reports</a>
  */
+@Log
 @Getter
 public class LinkedListNodeContainer implements Serializable {
 
@@ -67,13 +69,6 @@ public class LinkedListNodeContainer implements Serializable {
         int y3 = marginY + octagonSidePart * 2;
         int y4 = marginY + octagonSidePart * 3;
 
-        String keys[] = {
-            "upperLeft","upperRight",
-            "rightUpper","rightBottom",
-            "bottomLeft","bottomRight",
-            "leftUpper","leftBottom"
-        };
-
         LatticePoint upperLeft = new LatticePoint(x2,y1);
         LatticePoint upperRight = new LatticePoint(x3,y1);
         LatticePoint rightUpper = new LatticePoint(x4,y2);
@@ -93,9 +88,12 @@ public class LinkedListNodeContainer implements Serializable {
         latticePoints.put( "leftBottom", leftBottom);
 
         setupA();
+
+        currentNode = this.startNode.get(0);
     }
 
     public void setupA(){
+        log.info("setup A");
         LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
         LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
         LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
@@ -123,14 +121,15 @@ public class LinkedListNodeContainer implements Serializable {
     }
 
     public void setupB(){
-        LinkedListNode n0 = new LinkedListNode();
-        LinkedListNode n1 = new LinkedListNode();
-        LinkedListNode n2 = new LinkedListNode();
-        LinkedListNode n3 = new LinkedListNode();
-        LinkedListNode n4 = new LinkedListNode();
-        LinkedListNode n5 = new LinkedListNode();
-        LinkedListNode n6 = new LinkedListNode();
-        LinkedListNode n7 = new LinkedListNode();
+        log.info("setup B");
+        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
+        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
+        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
+        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
+        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
+        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
+        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
+        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
         n0.setNext(n1);
         n1.setNext(n2);
         n2.setNext(n3);
@@ -150,14 +149,15 @@ public class LinkedListNodeContainer implements Serializable {
     }
 
     public void setupC(){
-        LinkedListNode n0 = new LinkedListNode();
-        LinkedListNode n1 = new LinkedListNode();
-        LinkedListNode n2 = new LinkedListNode();
-        LinkedListNode n3 = new LinkedListNode();
-        LinkedListNode n4 = new LinkedListNode();
-        LinkedListNode n5 = new LinkedListNode();
-        LinkedListNode n6 = new LinkedListNode();
-        LinkedListNode n7 = new LinkedListNode();
+        log.info("setup C");
+        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
+        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
+        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
+        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
+        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
+        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
+        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
+        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
         n0.setNext(n1);
         n1.setNext(n2);
         n2.setNext(n3);
@@ -177,14 +177,15 @@ public class LinkedListNodeContainer implements Serializable {
     }
 
     public void setupD(){
-        LinkedListNode n0 = new LinkedListNode();
-        LinkedListNode n1 = new LinkedListNode();
-        LinkedListNode n2 = new LinkedListNode();
-        LinkedListNode n3 = new LinkedListNode();
-        LinkedListNode n4 = new LinkedListNode();
-        LinkedListNode n5 = new LinkedListNode();
-        LinkedListNode n6 = new LinkedListNode();
-        LinkedListNode n7 = new LinkedListNode();
+        log.info("setup D");
+        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
+        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
+        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
+        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
+        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
+        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
+        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
+        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
         n0.setNext(n1);
         n1.setNext(n2);
         n2.setNext(n3);
@@ -204,14 +205,15 @@ public class LinkedListNodeContainer implements Serializable {
     }
 
     public void setupE(){
-        LinkedListNode n0 = new LinkedListNode();
-        LinkedListNode n1 = new LinkedListNode();
-        LinkedListNode n2 = new LinkedListNode();
-        LinkedListNode n3 = new LinkedListNode();
-        LinkedListNode n4 = new LinkedListNode();
-        LinkedListNode n5 = new LinkedListNode();
-        LinkedListNode n6 = new LinkedListNode();
-        LinkedListNode n7 = new LinkedListNode();
+        log.info("setup E");
+        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
+        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
+        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
+        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
+        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
+        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
+        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
+        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
         n0.setNext(n1);
         n1.setNext(n2);
         n2.setNext(n3);
@@ -231,14 +233,15 @@ public class LinkedListNodeContainer implements Serializable {
     }
 
     public void setupF(){
-        LinkedListNode n0 = new LinkedListNode();
-        LinkedListNode n1 = new LinkedListNode();
-        LinkedListNode n2 = new LinkedListNode();
-        LinkedListNode n3 = new LinkedListNode();
-        LinkedListNode n4 = new LinkedListNode();
-        LinkedListNode n5 = new LinkedListNode();
-        LinkedListNode n6 = new LinkedListNode();
-        LinkedListNode n7 = new LinkedListNode();
+        log.info("setup F");
+        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
+        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
+        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
+        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
+        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
+        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
+        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
+        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
         n0.setNext(n1);
         n1.setNext(n2);
         n2.setNext(n3);
@@ -258,14 +261,15 @@ public class LinkedListNodeContainer implements Serializable {
     }
 
     public void setupG(){
-        LinkedListNode n0 = new LinkedListNode();
-        LinkedListNode n1 = new LinkedListNode();
-        LinkedListNode n2 = new LinkedListNode();
-        LinkedListNode n3 = new LinkedListNode();
-        LinkedListNode n4 = new LinkedListNode();
-        LinkedListNode n5 = new LinkedListNode();
-        LinkedListNode n6 = new LinkedListNode();
-        LinkedListNode n7 = new LinkedListNode();
+        log.info("setup G");
+        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
+        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
+        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
+        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
+        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
+        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
+        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
+        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
         n0.setNext(n1);
         n1.setNext(n2);
         n2.setNext(n3);
@@ -285,14 +289,15 @@ public class LinkedListNodeContainer implements Serializable {
     }
 
     public void setupH(){
-        LinkedListNode n0 = new LinkedListNode();
-        LinkedListNode n1 = new LinkedListNode();
-        LinkedListNode n2 = new LinkedListNode();
-        LinkedListNode n3 = new LinkedListNode();
-        LinkedListNode n4 = new LinkedListNode();
-        LinkedListNode n5 = new LinkedListNode();
-        LinkedListNode n6 = new LinkedListNode();
-        LinkedListNode n7 = new LinkedListNode();
+        log.info("setup H");
+        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
+        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
+        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
+        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
+        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
+        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
+        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
+        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
         n0.setNext(n1);
         n1.setNext(n2);
         n2.setNext(n3);
@@ -312,14 +317,15 @@ public class LinkedListNodeContainer implements Serializable {
     }
 
     public void setupI(){
-        LinkedListNode n0 = new LinkedListNode();
-        LinkedListNode n1 = new LinkedListNode();
-        LinkedListNode n2 = new LinkedListNode();
-        LinkedListNode n3 = new LinkedListNode();
-        LinkedListNode n4 = new LinkedListNode();
-        LinkedListNode n5 = new LinkedListNode();
-        LinkedListNode n6 = new LinkedListNode();
-        LinkedListNode n7 = new LinkedListNode();
+        log.info("setup I");
+        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
+        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
+        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
+        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
+        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
+        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
+        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
+        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
         n0.setNext(n1);
         n1.setNext(n2);
         n2.setNext(n3);
@@ -339,14 +345,15 @@ public class LinkedListNodeContainer implements Serializable {
     }
 
     public void setupJ(){
-        LinkedListNode n0 = new LinkedListNode();
-        LinkedListNode n1 = new LinkedListNode();
-        LinkedListNode n2 = new LinkedListNode();
-        LinkedListNode n3 = new LinkedListNode();
-        LinkedListNode n4 = new LinkedListNode();
-        LinkedListNode n5 = new LinkedListNode();
-        LinkedListNode n6 = new LinkedListNode();
-        LinkedListNode n7 = new LinkedListNode();
+        log.info("setup J");
+        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
+        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
+        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
+        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
+        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
+        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
+        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
+        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
         n0.setNext(n1);
         n1.setNext(n2);
         n2.setNext(n3);
@@ -366,14 +373,15 @@ public class LinkedListNodeContainer implements Serializable {
     }
 
     public void setupK(){
-        LinkedListNode n0 = new LinkedListNode();
-        LinkedListNode n1 = new LinkedListNode();
-        LinkedListNode n2 = new LinkedListNode();
-        LinkedListNode n3 = new LinkedListNode();
-        LinkedListNode n4 = new LinkedListNode();
-        LinkedListNode n5 = new LinkedListNode();
-        LinkedListNode n6 = new LinkedListNode();
-        LinkedListNode n7 = new LinkedListNode();
+        log.info("setup K");
+        LinkedListNode n0 = new LinkedListNode(latticePoints.get("upperLeft"));
+        LinkedListNode n1 = new LinkedListNode(latticePoints.get("upperRight"));
+        LinkedListNode n2 = new LinkedListNode(latticePoints.get("rightUpper"));
+        LinkedListNode n3 = new LinkedListNode(latticePoints.get("rightBottom"));
+        LinkedListNode n4 = new LinkedListNode(latticePoints.get("bottomRight"));
+        LinkedListNode n5 = new LinkedListNode(latticePoints.get("bottomLeft"));
+        LinkedListNode n6 = new LinkedListNode(latticePoints.get("leftBottom"));
+        LinkedListNode n7 = new LinkedListNode(latticePoints.get("leftUpper"));
         n0.setNext(n1);
         n1.setNext(n2);
         n2.setNext(n3);
@@ -393,7 +401,8 @@ public class LinkedListNodeContainer implements Serializable {
     }
 
     public void step() {
-        double wayFraction = 0.05;
+        log.info("step");
+        double wayFraction = 0.1;
         List<LinkedListNode> nextStep = new ArrayList<>();
         for(LinkedListNode o : startNode){
             LatticePoint thisPoint = o.getPoint();

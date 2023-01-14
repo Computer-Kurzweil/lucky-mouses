@@ -1,6 +1,7 @@
 package org.woehlke.computer.kurzweil.lucky.mouses.view.canvas;
 
 import lombok.Getter;
+import lombok.extern.java.Log;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.LuckyMousesModel;
 import org.woehlke.computer.kurzweil.lucky.mouses.model.koch.LinkedListNode;
 
@@ -27,6 +28,7 @@ import java.util.List;
  * Date: 05.02.2006
  * Time: 00:51:51
  */
+@Log
 @Getter
 public class LuckyMousesCanvas extends JComponent  {
 
@@ -48,6 +50,7 @@ public class LuckyMousesCanvas extends JComponent  {
     }
 
     public void paint(Graphics g) {
+        log.info("paint");
         this.setSize(this.preferredSize);
         this.setPreferredSize(preferredSize);
         super.paintComponent(g);
@@ -61,13 +64,13 @@ public class LuckyMousesCanvas extends JComponent  {
             this.model.getWorldDimensions().getWidth(),
             this.model.getWorldDimensions().getHeight()
         );
-        g.setColor(Color.BLACK);
+        g.setColor(Color.CYAN);
         g.fillRect(
             paddingX,0,
             this.model.getWorldDimensions().getHeight(),
             this.model.getWorldDimensions().getHeight()
         );
-        g.setColor(Color.RED);
+        //g.setColor(Color.RED);
         List<LinkedListNode> startNode = model.getLinkedListNodeContainer().getStartNode();
         int i=0;
         for(LinkedListNode o : startNode) {
