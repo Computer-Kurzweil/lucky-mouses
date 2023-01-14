@@ -43,6 +43,8 @@ public class LinkedListNodeContainer implements Serializable {
     private List<LinkedListNode> startNode = new ArrayList<>();
     private LinkedListNode currentNode;
 
+    private Boolean firstStep;
+
     public LinkedListNodeContainer(LuckyMousesFrame tab, LatticeDimension worldDimensions){
         this.tab = tab;
         this.worldDimensions = worldDimensions;
@@ -90,6 +92,7 @@ public class LinkedListNodeContainer implements Serializable {
         setupA();
 
         currentNode = this.startNode.get(0);
+        firstStep = true;
     }
 
     public void setupA(){
@@ -403,7 +406,6 @@ public class LinkedListNodeContainer implements Serializable {
     public void step() {
         log.info("step");
         double wayFraction = 0.1;
-        List<LinkedListNode> nextStep = new ArrayList<>();
         for(LinkedListNode o : startNode){
             LatticePoint thisPoint = o.getPoint();
             LatticePoint nextPoint = o.getNext().getPoint();
@@ -411,6 +413,6 @@ public class LinkedListNodeContainer implements Serializable {
             LatticePoint thisPointNew = thisPoint.plus(delta);
             o.setPoint(thisPointNew);
         }
-        startNode = nextStep;
+        firstStep = false;
     }
 }
