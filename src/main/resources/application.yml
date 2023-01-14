@@ -173,7 +173,7 @@ luckyMouses:
     copyright: '(c) 2023 Thomas Woehlke'
     width: 400
     height: 292
-    scale: 2
+    scale: 3
     buttonsRunA: "Run A"
     buttonsRunB: "Run B"
     buttonsRunC: "Run C"

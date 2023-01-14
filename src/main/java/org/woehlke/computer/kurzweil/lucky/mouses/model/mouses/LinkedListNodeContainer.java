@@ -197,12 +197,12 @@ public class LinkedListNodeContainer implements Serializable {
         switch (k){
             case 'A':
                 n[0] = new LinkedListNode(latticePoints.get("upperLeft"));
-                n[1] = new LinkedListNode(latticePoints.get("upperRight"));
-                n[2] = new LinkedListNode(latticePoints.get("rightUpper"));
-                n[3] = new LinkedListNode(latticePoints.get("rightBottom"));
-                n[4] = new LinkedListNode(latticePoints.get("bottomRight"));
-                n[5] = new LinkedListNode(latticePoints.get("bottomLeft"));
-                n[6] = new LinkedListNode(latticePoints.get("leftBottom"));
+                n[1] = new LinkedListNode(latticePoints.get("bottomLeft"));
+                n[2] = new LinkedListNode(latticePoints.get("leftBottom"));
+                n[3] = new LinkedListNode(latticePoints.get("rightUpper"));
+                n[4] = new LinkedListNode(latticePoints.get("upperRight"));
+                n[5] = new LinkedListNode(latticePoints.get("bottomRight"));
+                n[6] = new LinkedListNode(latticePoints.get("rightBottom"));
                 n[7] = new LinkedListNode(latticePoints.get("leftUpper"));
                 break;
             case 'B':
@@ -268,7 +268,7 @@ public class LinkedListNodeContainer implements Serializable {
 
     public void step() {
         log.info("step");
-        double wayFraction = 0.1;
+        double wayFraction = 0.05;
         List<LinkedListNode> polygonOld = startNode.element();
         List<LinkedListNode> polygonNew = copyNodes(polygonOld);
         for(int i = 0; i<polygonNew.size();i++){
