@@ -108,8 +108,6 @@ public class LuckyMousesFrame extends JFrame implements ImageObserver,
     public void mouseClicked(MouseEvent e) {
         this.model.step();
         this.canvas.repaint();
-        this.repaint();
-        showMe();
     }
 
     @Override

@@ -51,27 +51,15 @@ public class LuckyMousesCanvas extends JComponent  {
 
     public void paint(Graphics g) {
         log.info("paint");
-        this.setSize(this.preferredSize);
-        this.setPreferredSize(preferredSize);
-        super.paintComponent(g);
-        super.setBackground(Color.BLACK);
-        if(this.model.getLinkedListNodeContainer().getFirstStep()) {
-            renderBackground(g);
-        }
+        //this.setSize(this.preferredSize);
+        //this.setPreferredSize(preferredSize);
         renderModel(g);
     }
 
     private void renderModel(Graphics g){
         List<LinkedListNode> startNode = model.getLinkedListNodeContainer().getStartNode();
-        int i=0;
+        g.setColor(Color.BLACK);
         for(LinkedListNode o : startNode) {
-            switch (i%4){
-                case 0: g.setColor(Color.RED); break;
-                case 1: g.setColor(Color.GREEN); break;
-                case 2: g.setColor(Color.BLUE); break;
-                case 3: g.setColor(Color.YELLOW); break;
-            }
-            i++;
             g.drawLine(
                 o.getPoint().getX(),
                 o.getPoint().getY(),
@@ -79,22 +67,6 @@ public class LuckyMousesCanvas extends JComponent  {
                 o.getNext().getPoint().getY()
             );
         }
-    }
-
-    private void renderBackground(Graphics g){
-        int paddingX = (this.model.getWorldDimensions().getWidth()-this.model.getWorldDimensions().getHeight())/2;
-        g.setColor(Color.BLACK);
-        g.fillRect(
-            0, 0,
-            this.model.getWorldDimensions().getWidth(),
-            this.model.getWorldDimensions().getHeight()
-        );
-        g.setColor(Color.BLACK);
-        g.fillRect(
-            paddingX, 0,
-            this.model.getWorldDimensions().getHeight(),
-            this.model.getWorldDimensions().getHeight()
-        );
     }
 
     public void update(Graphics g) {
