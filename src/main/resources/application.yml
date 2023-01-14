@@ -181,8 +181,8 @@ luckyMouses:
     buttonsRunE: "Run E"
     buttonsRunF: "Run F"
   control:
-    threadSleepTime: 300000
-    maxIterations: 6
+    threadSleepTime: 1000
+    maxIterations: 32
 wator:
   view:
     title: 'WaTor'
@@ -194,7 +194,7 @@ wator:
       typeWoehlke: 'Woehlke'
   control:
     threadSleepTime: 50
-    numberOfParticles: 30000
+    numberOfParticles: 100000
 gameoflive:
   view:
     title: 'Conways Game of Life'
