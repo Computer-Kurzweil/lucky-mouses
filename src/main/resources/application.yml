@@ -180,6 +180,11 @@ luckyMouses:
     buttonsRunD: "Run D"
     buttonsRunE: "Run E"
     buttonsRunF: "Run F"
+    buttonsRunG: "Run G"
+    buttonsRunH: "Run H"
+    buttonsRunI: "Run I"
+    buttonsRunJ: "Run J"
+    buttonsRunK: "Run K"
   control:
     threadSleepTime: 50
     maxIterations: 100

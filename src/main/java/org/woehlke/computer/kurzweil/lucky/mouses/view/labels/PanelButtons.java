@@ -20,6 +20,11 @@ public class PanelButtons extends JPanel implements ActionListener {
     private volatile JButton buttonsRunD;
     private volatile JButton buttonsRunE;
     private volatile JButton buttonsRunF;
+    private volatile JButton buttonsRunG;
+    private volatile JButton buttonsRunH;
+    private volatile JButton buttonsRunI;
+    private volatile JButton buttonsRunJ;
+    private volatile JButton buttonsRunK;
     private final LuckyMousesFrame tab;
     private final LuckyMousesModel model;
 
@@ -33,6 +38,11 @@ public class PanelButtons extends JPanel implements ActionListener {
         this.buttonsRunD = new JButton(config.getLuckyMouses().getView().getButtonsRunD());
         this.buttonsRunE = new JButton(config.getLuckyMouses().getView().getButtonsRunE());
         this.buttonsRunF = new JButton(config.getLuckyMouses().getView().getButtonsRunF());
+        this.buttonsRunG = new JButton(config.getLuckyMouses().getView().getButtonsRunG());
+        this.buttonsRunH = new JButton(config.getLuckyMouses().getView().getButtonsRunH());
+        this.buttonsRunI = new JButton(config.getLuckyMouses().getView().getButtonsRunI());
+        this.buttonsRunJ = new JButton(config.getLuckyMouses().getView().getButtonsRunJ());
+        this.buttonsRunK = new JButton(config.getLuckyMouses().getView().getButtonsRunK());
         int hgap = 16;
         int vgap = 2;
         this.copyright.setLayout(new FlowLayout( FlowLayout.RIGHT, hgap, vgap));
@@ -43,20 +53,36 @@ public class PanelButtons extends JPanel implements ActionListener {
         this.buttonsRunD.setLayout(layout);
         this.buttonsRunE.setLayout(layout);
         this.buttonsRunF.setLayout(layout);
+        this.buttonsRunG.setLayout(layout);
+        this.buttonsRunH.setLayout(layout);
+        this.buttonsRunI.setLayout(layout);
+        this.buttonsRunJ.setLayout(layout);
+        this.buttonsRunK.setLayout(layout);
         this.setLayout(new FlowLayout( FlowLayout.CENTER, hgap, vgap));
         this.add(this.copyright);
         this.add(this.buttonsRunA);
         this.add(this.buttonsRunB);
         this.add(this.buttonsRunC);
         this.add(this.buttonsRunC);
+        this.add(this.buttonsRunD);
         this.add(this.buttonsRunE);
         this.add(this.buttonsRunF);
+        this.add(this.buttonsRunG);
+        this.add(this.buttonsRunH);
+        this.add(this.buttonsRunI);
+        this.add(this.buttonsRunJ);
+        this.add(this.buttonsRunK);
         this.buttonsRunA.addActionListener(this);
         this.buttonsRunB.addActionListener(this);
         this.buttonsRunC.addActionListener(this);
         this.buttonsRunD.addActionListener(this);
         this.buttonsRunE.addActionListener(this);
         this.buttonsRunF.addActionListener(this);
+        this.buttonsRunG.addActionListener(this);
+        this.buttonsRunH.addActionListener(this);
+        this.buttonsRunI.addActionListener(this);
+        this.buttonsRunJ.addActionListener(this);
+        this.buttonsRunK.addActionListener(this);
     }
 
     /**
@@ -81,6 +107,21 @@ public class PanelButtons extends JPanel implements ActionListener {
         }
         if(ae.getSource() == this.buttonsRunF){
             this.model.runF();
+        }
+        if(ae.getSource() == this.buttonsRunG){
+            this.model.runG();
+        }
+        if(ae.getSource() == this.buttonsRunH){
+            this.model.runH();
+        }
+        if(ae.getSource() == this.buttonsRunI){
+            this.model.runI();
+        }
+        if(ae.getSource() == this.buttonsRunJ){
+            this.model.runJ();
+        }
+        if(ae.getSource() == this.buttonsRunK){
+            this.model.runK();
         }
         this.tab.getCanvas().repaint();
         this.tab.repaint();
