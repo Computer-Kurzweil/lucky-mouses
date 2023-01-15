@@ -174,17 +174,17 @@ luckyMouses:
     width: 400
     height: 292
     scale: 3
-    buttonsRunA: "Run A"
-    buttonsRunB: "Run B"
-    buttonsRunC: "Run C"
-    buttonsRunD: "Run D"
-    buttonsRunE: "Run E"
-    buttonsRunF: "Run F"
-    buttonsRunG: "Run G"
-    buttonsRunH: "Run H"
-    buttonsRunI: "Run I"
-    buttonsRunJ: "Run J"
-    buttonsRunK: "Run K"
+    buttonsRunA: "A"
+    buttonsRunB: "B"
+    buttonsRunC: "C"
+    buttonsRunD: "D"
+    buttonsRunE: "E"
+    buttonsRunF: "F"
+    buttonsRunG: "G"
+    buttonsRunH: "H"
+    buttonsRunI: "I"
+    buttonsRunJ: "J"
+    buttonsRunK: "K"
   control:
     threadSleepTime: 50
     maxIterations: 100
