@@ -51,7 +51,7 @@ public class LuckyMousesCanvas extends JComponent  {
     }
 
     public void paint(Graphics g) {
-        log.info("paint");
+        //log.info("paint");
         //this.setSize(this.preferredSize);
         //this.setPreferredSize(preferredSize);
         renderBackground(g);
